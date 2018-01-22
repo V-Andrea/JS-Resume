@@ -1,2 +1,1 @@
-const hello = 'Hello word';
-console.log(hello);
+import 'data.js';
