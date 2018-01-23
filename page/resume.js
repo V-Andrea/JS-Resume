@@ -70,9 +70,12 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view__ = __webpack_require__(2);
+
 
 
 console.log(__WEBPACK_IMPORTED_MODULE_0__data__["a" /* bio */].name);
+__WEBPACK_IMPORTED_MODULE_1__view__["a" /* view */].init();
 
 /***/ }),
 /* 1 */
@@ -168,6 +171,24 @@ let education = {
     'url': 'https://www.udacity.com/course/intro-to-html-and-css--ud304'
   }]
 };
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const view = {
+  init: () => {
+    view.render();
+  },
+  render: () => {
+    // TODO: add complete render functionality
+    // for testing purposes only:
+    console.log('view module testing');
+  }
+};
+/* harmony export (immutable) */ __webpack_exports__["a"] = view;
+
 
 /***/ })
 /******/ ]);
