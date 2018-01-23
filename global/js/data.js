@@ -1,7 +1,8 @@
 export { bio, projects, skills, education };
 
 let bio = {
-  'name' : 'Andrea Toth',
+  'firstName' : 'Andrea',
+  'lastName' : 'Toth',
   'role' : 'front-end developer',
   'profile' : 'Curious and enthusiastic young professional in the middle of a career change to be a thriving front-end developer.',
   'contacts' : {
