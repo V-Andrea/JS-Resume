@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -68,14 +68,19 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return control; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view__ = __webpack_require__(3);
 
 
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__data__["a" /* bio */].name);
-__WEBPACK_IMPORTED_MODULE_1__view__["a" /* view */].init();
+let control = {
+  init: () => {
+    __WEBPACK_IMPORTED_MODULE_1__view__["a" /* view */].init();
+  },
+  getBio: () => __WEBPACK_IMPORTED_MODULE_0__data__["a" /* bio */],
+  getProjects: () => __WEBPACK_IMPORTED_MODULE_0__data__["b" /* projects */]
+};
 
 /***/ }),
 /* 1 */
@@ -83,13 +88,14 @@ __WEBPACK_IMPORTED_MODULE_1__view__["a" /* view */].init();
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return bio; });
-/* unused harmony export projects */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return projects; });
 /* unused harmony export skills */
 /* unused harmony export education */
 
 
 let bio = {
-  'name': 'Andrea Toth',
+  'firstName': 'Andrea',
+  'lastName': 'Toth',
   'role': 'front-end developer',
   'profile': 'Curious and enthusiastic young professional in the middle of a career change to be a thriving front-end developer.',
   'contacts': {
@@ -177,17 +183,52 @@ let education = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const view = {
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__control__ = __webpack_require__(0);
+
+
+// let's build the Resumé
+__WEBPACK_IMPORTED_MODULE_0__control__["a" /* control */].init();
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return view; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__control__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_hero__ = __webpack_require__(4);
+
+
+
+
+let view = {
   init: () => {
     view.render();
   },
   render: () => {
     // TODO: add complete render functionality
-    // for testing purposes only:
-    console.log('view module testing');
+    let myBio = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getBio();
+    let myHero = Object(__WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */])(myBio);
+    let heroElement = document.querySelector('.hero');
+    heroElement.innerHTML = myHero;
   }
 };
-/* harmony export (immutable) */ __webpack_exports__["a"] = view;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const createHero = data => `
+    <h1 class="h1">${data.firstName} ${data.lastName}</h1>
+    <p>Hi, I'm ${data.firstName},</p>
+    <strong>${data.role},</strong>
+    <p>currently looking for a job.</p>
+    <p>${data.welcomeMessage}</p>
+    `;
+/* harmony export (immutable) */ __webpack_exports__["a"] = createHero;
 
 
 /***/ })

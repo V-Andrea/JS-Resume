@@ -1,5 +1,5 @@
-import { bio } from './data';
-import {view} from './view';
+import {control} from './control';
 
-console.log(bio.name);
-view.init();
+
+// let's build the Resumé
+control.init();
