@@ -259,6 +259,11 @@ let view = {
         let statementDiv = document.querySelector('#pro-statement');
         let myStatement = Object(__WEBPACK_IMPORTED_MODULE_7__templates_statement__["a" /* addStatement */])(myBio);
         statementDiv.innerHTML = myStatement;
+
+        // appending contact info
+        let contactsDiv = document.querySelector('.contact');
+        let myContactInfo = Object(__WEBPACK_IMPORTED_MODULE_8__templates_contact__["a" /* addContacts */])(myBio);
+        contactsDiv.innerHTML = myContactInfo;
     }
 };
 
@@ -379,7 +384,7 @@ const addContacts = data => `
       </li>
     </ul>
     `;
-/* unused harmony export addContacts */
+/* harmony export (immutable) */ __webpack_exports__["a"] = addContacts;
 
 
 /***/ })

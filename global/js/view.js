@@ -48,5 +48,10 @@ export let view = {
     let myStatement = addStatement(myBio);
     statementDiv.innerHTML = myStatement;
 
+    // appending contact info
+    let contactsDiv = document.querySelector('.contact');
+    let myContactInfo = addContacts(myBio);
+    contactsDiv.innerHTML = myContactInfo;
+
   }
 }
