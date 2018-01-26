@@ -4,6 +4,7 @@ import {createHero} from './templates/hero';
 import {addProjects} from './templates/projects';
 import {addProSkills} from './templates/proSkills';
 import {addStudies} from './templates/studies';
+import {addSoftSkills} from './templates/softSkills';
 
 export let view = {
   init: () => {
