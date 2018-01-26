@@ -202,6 +202,8 @@ __WEBPACK_IMPORTED_MODULE_0__control__["a" /* control */].init();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__control__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_hero__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__templates_projects__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__templates_proSkills__ = __webpack_require__(6);
+
 
 
 
@@ -250,6 +252,19 @@ const addProjects = data => `
     </div>
     `;
 /* unused harmony export addProjects */
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const addProSkills = data => `
+    <ui class="pro-skills">
+      ${data.professional.forEach(skill => `<li>${skill}</li>`)}
+    </ui>
+    `;
+/* unused harmony export addProSkills */
 
 
 /***/ })
