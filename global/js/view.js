@@ -28,8 +28,8 @@ export let view = {
 
     // appending pro-skills
     let proSkillsDiv = document.querySelector('#pro-skills');
-    let myProSkills = control.getSkills();
-    let myProSkillList = addProSkills(myProSkills);
+    let mySkills = control.getSkills();
+    let myProSkillList = addProSkills(mySkills);
     proSkillsDiv.innerHTML = myProSkillList;
 
     // appending studies
@@ -37,6 +37,16 @@ export let view = {
     let myStudies = control.getStudies();
     let myStudyList = addStudies(myStudies);
     studiesDiv.innerHTML = myStudyList;
+
+    // appending soft-skills
+    let softSkillsDiv = document.querySelector('#soft-skills');
+    let mySoftSkillList = addSoftSkills(mySkills);
+    softSkillsDiv.innerHTML = mySoftSkillList;
+
+    // appending pro-statement
+    let statementDiv = document.querySelector('#pro-statement');
+    let myStatement = addStatement(myBio);
+    statementDiv.innerHTML = myStatement;
 
   }
 }

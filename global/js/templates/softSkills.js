@@ -1,5 +1,6 @@
 export const addSoftSkills = data =>
     `
+    <h2>Personal Skills</h2>
     <ul>
       ${data.personal.map(skill => `<li>
         <svg class="circular-chart" viewbox="0 0 36 36">

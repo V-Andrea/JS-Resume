@@ -240,8 +240,8 @@ let view = {
 
         // appending pro-skills
         let proSkillsDiv = document.querySelector('#pro-skills');
-        let myProSkills = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getSkills();
-        let myProSkillList = Object(__WEBPACK_IMPORTED_MODULE_4__templates_proSkills__["a" /* addProSkills */])(myProSkills);
+        let mySkills = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getSkills();
+        let myProSkillList = Object(__WEBPACK_IMPORTED_MODULE_4__templates_proSkills__["a" /* addProSkills */])(mySkills);
         proSkillsDiv.innerHTML = myProSkillList;
 
         // appending studies
@@ -249,6 +249,16 @@ let view = {
         let myStudies = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getStudies();
         let myStudyList = Object(__WEBPACK_IMPORTED_MODULE_5__templates_studies__["a" /* addStudies */])(myStudies);
         studiesDiv.innerHTML = myStudyList;
+
+        // appending soft-skills
+        let softSkillsDiv = document.querySelector('#soft-skills');
+        let mySoftSkillList = Object(__WEBPACK_IMPORTED_MODULE_6__templates_softSkills__["a" /* addSoftSkills */])(mySkills);
+        softSkillsDiv.innerHTML = mySoftSkillList;
+
+        // appending pro-statement
+        let statementDiv = document.querySelector('#pro-statement');
+        let myStatement = Object(__WEBPACK_IMPORTED_MODULE_7__templates_statement__["a" /* addStatement */])(myBio);
+        statementDiv.innerHTML = myStatement;
     }
 };
 
@@ -336,7 +346,7 @@ const addSoftSkills = data => `
       </li>`)}
     </ul>
     `;
-/* unused harmony export addSoftSkills */
+/* harmony export (immutable) */ __webpack_exports__["a"] = addSoftSkills;
 
 
 /***/ }),
@@ -348,7 +358,7 @@ const addStatement = data => `
     <h2 class="h2">Professional statement</h2>
     <p>${data.statement}</p>
     `;
-/* unused harmony export addStatement */
+/* harmony export (immutable) */ __webpack_exports__["a"] = addStatement;
 
 
 /***/ }),
