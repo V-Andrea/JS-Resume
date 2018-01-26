@@ -114,12 +114,14 @@ let projects = {
     'title': 'Resumé',
     'dates': '2017',
     'description': 'this',
-    'images': ['images/197x148.gif', 'images/197x148.gif']
+    'github': 'https://github.com/V-Andrea',
+    'image': 'images/197x148.gif'
   }, {
     'title': 'Edgy Fashion Prestashop Theme',
     'dates': '2016-2017',
     'description': 'that',
-    'images': ['images/197x148.gif', 'images/197x148.gif']
+    'github': 'https://github.com/V-Andrea',
+    'image': 'images/197x148.gif'
   }]
 };
 
@@ -199,6 +201,8 @@ __WEBPACK_IMPORTED_MODULE_0__control__["a" /* control */].init();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__control__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_hero__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__templates_projects__ = __webpack_require__(5);
+
 
 
 
@@ -229,6 +233,23 @@ const createHero = data => `
     <p>${data.welcomeMessage}</p>
     `;
 /* harmony export (immutable) */ __webpack_exports__["a"] = createHero;
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const addProjects = data => `
+    <div class="project-entry">
+      <img src="${data.image}">
+      <h6>${data.title}</h6>
+      <a href="Github">${data.github}</a>
+      <div class="date-text">${data.dates}</div>
+      <p>${data.description}</p>
+    </div>
+    `;
+/* unused harmony export addProjects */
 
 
 /***/ })

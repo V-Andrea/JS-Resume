@@ -22,13 +22,15 @@ let projects = {
     'title' : 'Resumé',
     'dates' : '2017',
     'description' : 'this',
-    'images' : ['images/197x148.gif', 'images/197x148.gif']
+    'github' : 'https://github.com/V-Andrea',
+    'image' : 'images/197x148.gif'
   },
   {
     'title' : 'Edgy Fashion Prestashop Theme',
     'dates' : '2016-2017',
     'description' : 'that',
-    'images' : ['images/197x148.gif', 'images/197x148.gif']
+    'github' : 'https://github.com/V-Andrea',
+    'image' : 'images/197x148.gif'
   }
   ]
 };
