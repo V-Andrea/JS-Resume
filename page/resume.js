@@ -231,7 +231,7 @@ let view = {
     heroElement.innerHTML = myHero;
 
     // appending projects
-    let projectsDiv = document.querySelector('.projects');
+    let projectsDiv = document.querySelector('#projects');
     let myProjects = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getProjects();
     let myProjectList = Object(__WEBPACK_IMPORTED_MODULE_3__templates_projects__["a" /* addProjects */])(myProjects);
     projectsDiv.innerHTML = myProjectList;

@@ -21,7 +21,7 @@ export let view = {
     heroElement.innerHTML = myHero;
 
     // appending projects
-    let projectsDiv = document.querySelector('.projects');
+    let projectsDiv = document.querySelector('#projects');
     let myProjects = control.getProjects();
     let myProjectList = addProjects(myProjects);
     projectsDiv.innerHTML = myProjectList;
