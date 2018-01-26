@@ -207,6 +207,8 @@ __WEBPACK_IMPORTED_MODULE_0__control__["a" /* control */].init();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__templates_studies__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__templates_softSkills__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__templates_statement__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__templates_contact__ = __webpack_require__(10);
+
 
 
 
@@ -321,6 +323,27 @@ const addStatement = data => `
     <p>${data.statement}</p>
     `;
 /* unused harmony export addStatement */
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const addContacts = data => `
+    <ul>
+      <li>
+        <a class="class-link" href="${data.contacts.email}">E-mail</a>
+      </li>
+      <li>
+        <a class="class-link" href="${data.contacts.github}">Github</a>
+      </li>
+      <li>
+        <a class="class-link" href="${data.contacts.linkedin}">LinkedIn</a>
+      </li>
+    </ul>
+    `;
+/* unused harmony export addContacts */
 
 
 /***/ })
