@@ -203,6 +203,8 @@ __WEBPACK_IMPORTED_MODULE_0__control__["a" /* control */].init();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_hero__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__templates_projects__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__templates_proSkills__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__templates_studies__ = __webpack_require__(7);
+
 
 
 
@@ -265,6 +267,24 @@ const addProSkills = data => `
     </ui>
     `;
 /* unused harmony export addProSkills */
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const addStudies = data => `
+    <ui class="courses">
+      ${data.onlineCourses.map(course => `<li>
+        <h6 class="class-title">${course.title}</h6>
+        <p>${course.school}</p>
+        <div class="date-text">${course.dates}</div>
+        <a class="class-link" href="${course.url}">${course.url}</a>
+      </li>`)}
+    </ui>
+    `;
+/* unused harmony export addStudies */
 
 
 /***/ })
