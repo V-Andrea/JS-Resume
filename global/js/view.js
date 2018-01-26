@@ -26,5 +26,17 @@ export let view = {
     let myProjectList = addProjects(myProjects);
     projectsDiv.innerHTML = myProjectList;
 
+    // appending pro-skills
+    let proSkillsDiv = document.querySelector('#pro-skills');
+    let myProSkills = control.getSkills();
+    let myProSkillList = addProSkills(myProSkills);
+    proSkillsDiv.innerHTML = myProSkillList;
+
+    // appending studies
+    let studiesDiv = document.querySelector('#studies');
+    let myStudies = control.getStudies();
+    let myStudyList = addStudies(myStudies);
+    studiesDiv.innerHTML = myStudyList;
+
   }
 }

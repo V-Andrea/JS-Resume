@@ -6,5 +6,7 @@ export let control = {
     view.init();
   },
   getBio: () => bio,
-  getProjects: () => projects
+  getProjects: () => projects,
+  getSkills: () => skills,
+  getStudies: () => education
 };

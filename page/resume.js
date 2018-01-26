@@ -79,7 +79,9 @@ let control = {
     __WEBPACK_IMPORTED_MODULE_1__view__["a" /* view */].init();
   },
   getBio: () => __WEBPACK_IMPORTED_MODULE_0__data__["a" /* bio */],
-  getProjects: () => __WEBPACK_IMPORTED_MODULE_0__data__["b" /* projects */]
+  getProjects: () => __WEBPACK_IMPORTED_MODULE_0__data__["c" /* projects */],
+  getSkills: () => __WEBPACK_IMPORTED_MODULE_0__data__["d" /* skills */],
+  getStudies: () => __WEBPACK_IMPORTED_MODULE_0__data__["b" /* education */]
 };
 
 /***/ }),
@@ -88,9 +90,9 @@ let control = {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return bio; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return projects; });
-/* unused harmony export skills */
-/* unused harmony export education */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return projects; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return skills; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return education; });
 
 
 let bio = {
@@ -219,23 +221,35 @@ __WEBPACK_IMPORTED_MODULE_0__control__["a" /* control */].init();
 
 
 let view = {
-  init: () => {
-    view.render();
-  },
-  render: () => {
-    // TODO: add complete render functionality
-    // appending hero
-    let heroElement = document.querySelector('.hero');
-    let myBio = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getBio();
-    let myHero = Object(__WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */])(myBio);
-    heroElement.innerHTML = myHero;
+    init: () => {
+        view.render();
+    },
+    render: () => {
+        // TODO: add complete render functionality
+        // appending hero
+        let heroElement = document.querySelector('.hero');
+        let myBio = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getBio();
+        let myHero = Object(__WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */])(myBio);
+        heroElement.innerHTML = myHero;
 
-    // appending projects
-    let projectsDiv = document.querySelector('#projects');
-    let myProjects = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getProjects();
-    let myProjectList = Object(__WEBPACK_IMPORTED_MODULE_3__templates_projects__["a" /* addProjects */])(myProjects);
-    projectsDiv.innerHTML = myProjectList;
-  }
+        // appending projects
+        let projectsDiv = document.querySelector('#projects');
+        let myProjects = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getProjects();
+        let myProjectList = Object(__WEBPACK_IMPORTED_MODULE_3__templates_projects__["a" /* addProjects */])(myProjects);
+        projectsDiv.innerHTML = myProjectList;
+
+        // appending pro-skills
+        let proSkillsDiv = document.querySelector('#pro-skills');
+        let myProSkills = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getSkills();
+        let myProSkillList = Object(__WEBPACK_IMPORTED_MODULE_4__templates_proSkills__["a" /* addProSkills */])(myProSkills);
+        proSkillsDiv.innerHTML = myProSkillList;
+
+        // appending studies
+        let studiesDiv = document.querySelector('#studies');
+        let myStudies = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getStudies();
+        let myStudyList = Object(__WEBPACK_IMPORTED_MODULE_5__templates_studies__["a" /* addStudies */])(myStudies);
+        studiesDiv.innerHTML = myStudyList;
+    }
 };
 
 /***/ }),
@@ -279,10 +293,10 @@ const addProjects = data => `
 "use strict";
 const addProSkills = data => `
     <ul class="pro-skills">
-      ${data.professional.forEach(skill => `<li>${skill}</li>`)}
+      ${data.professional.map(skill => `<li>${skill}</li>`).join('')}
     </ul>
     `;
-/* unused harmony export addProSkills */
+/* harmony export (immutable) */ __webpack_exports__["a"] = addProSkills;
 
 
 /***/ }),
@@ -300,7 +314,7 @@ const addStudies = data => `
       </li>`).join('')}
     </ul>
     `;
-/* unused harmony export addStudies */
+/* harmony export (immutable) */ __webpack_exports__["a"] = addStudies;
 
 
 /***/ }),
