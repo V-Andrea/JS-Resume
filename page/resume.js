@@ -97,11 +97,12 @@ let bio = {
   'firstName': 'Andrea',
   'lastName': 'Toth',
   'role': 'front-end developer',
-  'profile': 'Curious and enthusiastic young professional in the middle of a career change to be a thriving front-end developer.',
+  'profile': 'curious and enthusiastic young professional in the middle of a career change to be a thriving front-end developer.',
   'contacts': {
     'email': 'tothandrea.mail@gmail.com',
     'mobile': '+36307892850',
-    'github': 'VAndrea',
+    'github': 'https://github.com/V-Andrea',
+    'linkedin': 'https://www.linkedin.com/in/andrea-t%C3%B3th-1bbb5b77/',
     'location': 'Budapest'
   },
   'biopic': 'images/Andi.jpg',
@@ -237,7 +238,7 @@ const createHero = data => `
     <h1 class="h1">${data.firstName} ${data.lastName}</h1>
     <p>Hi, I'm ${data.firstName},</p>
     <strong>${data.role},</strong>
-    <p>currently looking for a job.</p>
+    <p>${data.profile}</p>
     <p>${data.welcomeMessage}</p>
     `;
 /* harmony export (immutable) */ __webpack_exports__["a"] = createHero;
