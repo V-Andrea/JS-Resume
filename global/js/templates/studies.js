@@ -6,6 +6,6 @@ export const addStudies = data =>
         <p>${course.school}</p>
         <div class="date-text">${course.dates}</div>
         <a class="class-link" href="${course.url}">${course.url}</a>
-      </li>`)}
+      </li>`).join('')}
     </ul>
     `
