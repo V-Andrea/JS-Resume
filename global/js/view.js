@@ -5,6 +5,7 @@ import {addProjects} from './templates/projects';
 import {addProSkills} from './templates/proSkills';
 import {addStudies} from './templates/studies';
 import {addSoftSkills} from './templates/softSkills';
+import {addStatement} from './templates/statement';
 
 export let view = {
   init: () => {

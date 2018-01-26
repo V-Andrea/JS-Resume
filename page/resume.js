@@ -205,6 +205,8 @@ __WEBPACK_IMPORTED_MODULE_0__control__["a" /* control */].init();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__templates_proSkills__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__templates_studies__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__templates_softSkills__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__templates_statement__ = __webpack_require__(9);
+
 
 
 
@@ -306,6 +308,18 @@ const addSoftSkills = data => `
     </ul>
     `;
 /* unused harmony export addSoftSkills */
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const addStatement = data => `
+    <h2 class="h2">Professional statement</h2>
+    <p>${data.statement}</p>
+    `;
+/* unused harmony export addStatement */
 
 
 /***/ })
