@@ -1,5 +1,6 @@
 export const addStudies = data =>
     `
+    <h2>Studies</h2>
     <ul class="courses">
       ${data.onlineCourses.map(course => `<li>
         <h6 class="class-title">${course.title}</h6>

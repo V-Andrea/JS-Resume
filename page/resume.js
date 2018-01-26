@@ -292,6 +292,7 @@ const addProjects = data => `
 
 "use strict";
 const addProSkills = data => `
+    <h2>Professional Skills</h2>
     <ul class="pro-skills">
       ${data.professional.map(skill => `<li>${skill}</li>`).join('')}
     </ul>
@@ -305,6 +306,7 @@ const addProSkills = data => `
 
 "use strict";
 const addStudies = data => `
+    <h2>Studies</h2>
     <ul class="courses">
       ${data.onlineCourses.map(course => `<li>
         <h6 class="class-title">${course.title}</h6>
@@ -323,6 +325,7 @@ const addStudies = data => `
 
 "use strict";
 const addSoftSkills = data => `
+    <h2>Personal Skills</h2>
     <ul>
       ${data.personal.map(skill => `<li>
         <svg class="circular-chart" viewbox="0 0 36 36">
