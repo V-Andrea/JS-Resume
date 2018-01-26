@@ -1,6 +1,6 @@
 export const addProSkills = data =>
     `
-    <ui class="pro-skills">
+    <ul class="pro-skills">
       ${data.professional.forEach(skill => `<li>${skill}</li>`)}
-    </ui>
+    </ul>
     `

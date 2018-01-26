@@ -262,9 +262,9 @@ const addProjects = data => `
 
 "use strict";
 const addProSkills = data => `
-    <ui class="pro-skills">
+    <ul class="pro-skills">
       ${data.professional.forEach(skill => `<li>${skill}</li>`)}
-    </ui>
+    </ul>
     `;
 /* unused harmony export addProSkills */
 
@@ -275,14 +275,14 @@ const addProSkills = data => `
 
 "use strict";
 const addStudies = data => `
-    <ui class="courses">
+    <ul class="courses">
       ${data.onlineCourses.map(course => `<li>
         <h6 class="class-title">${course.title}</h6>
         <p>${course.school}</p>
         <div class="date-text">${course.dates}</div>
         <a class="class-link" href="${course.url}">${course.url}</a>
       </li>`)}
-    </ui>
+    </ul>
     `;
 /* unused harmony export addStudies */
 
