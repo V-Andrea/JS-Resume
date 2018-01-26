@@ -14,9 +14,17 @@ export let view = {
   },
   render: () => {
     // TODO: add complete render functionality
+    // appending hero
+    let heroElement = document.querySelector('.hero');
     let myBio = control.getBio();
     let myHero = createHero(myBio);
-    let heroElement = document.querySelector('.hero');
     heroElement.innerHTML = myHero;
+
+    // appending projects
+    let projectsDiv = document.querySelector('.projects');
+    let myProjects = control.getProjects();
+    let myProjectList = addProjects(myProjects);
+    projectsDiv.innerHTML = myProjectList;
+
   }
 }

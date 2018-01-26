@@ -224,10 +224,17 @@ let view = {
   },
   render: () => {
     // TODO: add complete render functionality
+    // appending hero
+    let heroElement = document.querySelector('.hero');
     let myBio = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getBio();
     let myHero = Object(__WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */])(myBio);
-    let heroElement = document.querySelector('.hero');
     heroElement.innerHTML = myHero;
+
+    // appending projects
+    let projectsDiv = document.querySelector('.projects');
+    let myProjects = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getProjects();
+    let myProjectList = Object(__WEBPACK_IMPORTED_MODULE_3__templates_projects__["a" /* addProjects */])(myProjects);
+    projectsDiv.innerHTML = myProjectList;
   }
 };
 
@@ -252,15 +259,17 @@ const createHero = data => `
 
 "use strict";
 const addProjects = data => `
+    <h2>Projects</h2>
+    ${data.projects.map(project => `
     <div class="project-entry">
-      <img src="${data.image}">
-      <h6>${data.title}</h6>
-      <a href="Github">${data.github}</a>
-      <div class="date-text">${data.dates}</div>
-      <p>${data.description}</p>
+      <img src="${project.image}">
+      <h6>${project.title}</h6>
+      <a href="Github">${project.github}</a>
+      <div class="date-text">${project.dates}</div>
+      <p>${project.description}</p>
     </div>
-    `;
-/* unused harmony export addProjects */
+    `).join('')}`;
+/* harmony export (immutable) */ __webpack_exports__["a"] = addProjects;
 
 
 /***/ }),
