@@ -14,8 +14,10 @@ export let view = {
   },
   render: () => {
     // TODO: add complete render functionality
+
+    fillTemplate(createHero);
     // appending hero
-    let heroElement = document.querySelector('.hero');
+    let heroElement = document.querySelector('#hero');
     let myBio = control.getBio();
     let myHero = createHero(myBio);
     heroElement.innerHTML = myHero;
@@ -49,7 +51,7 @@ export let view = {
     statementDiv.innerHTML = myStatement;
 
     // appending contact info
-    let contactsDiv = document.querySelector('.contact');
+    let contactsDiv = document.querySelector('#contact');
     let myContactInfo = addContacts(myBio);
     contactsDiv.innerHTML = myContactInfo;
 

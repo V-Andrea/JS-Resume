@@ -226,8 +226,10 @@ let view = {
     },
     render: () => {
         // TODO: add complete render functionality
+
+        fillTemplate(__WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */]);
         // appending hero
-        let heroElement = document.querySelector('.hero');
+        let heroElement = document.querySelector('#hero');
         let myBio = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getBio();
         let myHero = Object(__WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */])(myBio);
         heroElement.innerHTML = myHero;
@@ -261,7 +263,7 @@ let view = {
         statementDiv.innerHTML = myStatement;
 
         // appending contact info
-        let contactsDiv = document.querySelector('.contact');
+        let contactsDiv = document.querySelector('#contact');
         let myContactInfo = Object(__WEBPACK_IMPORTED_MODULE_8__templates_contact__["a" /* addContacts */])(myBio);
         contactsDiv.innerHTML = myContactInfo;
     }
