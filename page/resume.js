@@ -225,39 +225,31 @@ let view = {
     view.render();
   },
   render: () => {
-    // TODO: add complete render functionality
-
-    view.addResumeElement('hero', __WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */]);
-    view.addResumeElement('projects', __WEBPACK_IMPORTED_MODULE_3__templates_projects__["a" /* addProjects */]);
-    view.addResumeElement('pro-skills', __WEBPACK_IMPORTED_MODULE_4__templates_proSkills__["a" /* addProSkills */]);
-    view.addResumeElement('studies', __WEBPACK_IMPORTED_MODULE_5__templates_studies__["a" /* addStudies */]);
-    view.addResumeElement('soft-skills', __WEBPACK_IMPORTED_MODULE_6__templates_softSkills__["a" /* addSoftSkills */]);
-    view.addResumeElement('pro-statement', __WEBPACK_IMPORTED_MODULE_7__templates_statement__["a" /* addStatement */]);
-    view.addResumeElement('contact', __WEBPACK_IMPORTED_MODULE_8__templates_contact__["a" /* addContacts */]);
-  },
-  fillTemplate: pageTemplate => {
-
+    // getting the Resumé data
     let myBio = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getBio();
     let myProjects = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getProjects();
     let mySkills = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getSkills();
     let myStudies = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getStudies();
 
+    /*
+    Mapping each template string (generating function) to its corresponding data objects and
+    the parent DOM element where it needs to be appended
+    */
     let templateMap = new Map();
-    templateMap.set(__WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */], myBio);
-    templateMap.set(__WEBPACK_IMPORTED_MODULE_3__templates_projects__["a" /* addProjects */], myProjects);
-    templateMap.set(__WEBPACK_IMPORTED_MODULE_4__templates_proSkills__["a" /* addProSkills */], mySkills);
-    templateMap.set(__WEBPACK_IMPORTED_MODULE_5__templates_studies__["a" /* addStudies */], myStudies);
-    templateMap.set(__WEBPACK_IMPORTED_MODULE_6__templates_softSkills__["a" /* addSoftSkills */], mySkills);
-    templateMap.set(__WEBPACK_IMPORTED_MODULE_7__templates_statement__["a" /* addStatement */], myBio);
-    templateMap.set(__WEBPACK_IMPORTED_MODULE_8__templates_contact__["a" /* addContacts */], myBio);
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */], { dataOrigin: myBio, parentElement: 'hero' });
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_3__templates_projects__["a" /* addProjects */], { dataOrigin: myProjects, parentElement: 'projects' });
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_4__templates_proSkills__["a" /* addProSkills */], { dataOrigin: mySkills, parentElement: 'pro-skills' });
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_5__templates_studies__["a" /* addStudies */], { dataOrigin: myStudies, parentElement: 'studies' });
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_6__templates_softSkills__["a" /* addSoftSkills */], { dataOrigin: mySkills, parentElement: 'soft-skills' });
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_7__templates_statement__["a" /* addStatement */], { dataOrigin: myBio, parentElement: 'pro-statement' });
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_8__templates_contact__["a" /* addContacts */], { dataOrigin: myBio, parentElement: 'contact' });
 
-    let filledTemplate = pageTemplate(templateMap.get(pageTemplate));
-    return filledTemplate;
-  },
-  addResumeElement: (parentElement, pageTemplate) => {
-    let parentDiv = document.getElementById(parentElement);
-    let filledTemplate = view.fillTemplate(pageTemplate);
-    parentDiv.innerHTML = filledTemplate;
+    // generating a filled in template and appending the resulting html to the page
+    templateMap.forEach((value, key, map) => {
+      let parentDiv = document.getElementById(value.parentElement);
+      let filledTemplate = key(value.dataOrigin);
+      parentDiv.innerHTML = filledTemplate;
+    });
   }
 };
 

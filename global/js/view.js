@@ -13,41 +13,31 @@ export let view = {
     view.render();
   },
   render: () => {
-    // TODO: add complete render functionality
-
-    view.addResumeElement('hero', createHero);
-    view.addResumeElement('projects', addProjects);
-    view.addResumeElement('pro-skills', addProSkills);
-    view.addResumeElement('studies', addStudies);
-    view.addResumeElement('soft-skills', addSoftSkills);
-    view.addResumeElement('pro-statement', addStatement);
-    view.addResumeElement('contact', addContacts);
-
-
-  },
-  fillTemplate : pageTemplate => {
-
+    // getting the Resumé data
     let myBio = control.getBio();
     let myProjects = control.getProjects();
     let mySkills = control.getSkills();
     let myStudies = control.getStudies();
 
+    /*
+    Mapping each template string (generating function) to its corresponding data objects and
+    the parent DOM element where it needs to be appended
+    */
     let templateMap = new Map();
-    templateMap.set(createHero, myBio);
-    templateMap.set(addProjects, myProjects);
-    templateMap.set(addProSkills, mySkills);
-    templateMap.set(addStudies, myStudies);
-    templateMap.set(addSoftSkills, mySkills);
-    templateMap.set(addStatement, myBio);
-    templateMap.set(addContacts, myBio);
+    templateMap.set(createHero, {dataOrigin: myBio, parentElement: 'hero'});
+    templateMap.set(addProjects, {dataOrigin: myProjects, parentElement: 'projects'});
+    templateMap.set(addProSkills, {dataOrigin: mySkills, parentElement: 'pro-skills'});
+    templateMap.set(addStudies, {dataOrigin: myStudies, parentElement: 'studies'});
+    templateMap.set(addSoftSkills, {dataOrigin: mySkills, parentElement: 'soft-skills'});
+    templateMap.set(addStatement, {dataOrigin: myBio, parentElement: 'pro-statement'});
+    templateMap.set(addContacts, {dataOrigin: myBio, parentElement: 'contact'});
 
-    let filledTemplate = pageTemplate(templateMap.get(pageTemplate));
-    return filledTemplate;
+    // generating a filled in template and appending the resulting html to the page
+    templateMap.forEach((value, key, map) => {
+      let parentDiv = document.getElementById(value.parentElement);
+      let filledTemplate = key(value.dataOrigin);
+      parentDiv.innerHTML = filledTemplate;
+    });
 
-  },
-  addResumeElement : (parentElement, pageTemplate) => {
-    let parentDiv = document.getElementById(parentElement);
-    let filledTemplate = view.fillTemplate(pageTemplate);
-    parentDiv.innerHTML = filledTemplate;
   }
 }
