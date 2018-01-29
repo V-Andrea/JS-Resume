@@ -221,52 +221,44 @@ __WEBPACK_IMPORTED_MODULE_0__control__["a" /* control */].init();
 
 
 let view = {
-    init: () => {
-        view.render();
-    },
-    render: () => {
-        // TODO: add complete render functionality
+  init: () => {
+    view.render();
+  },
+  render: () => {
+    // TODO: add complete render functionality
 
-        fillTemplate(__WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */]);
-        // appending hero
-        let heroElement = document.querySelector('#hero');
-        let myBio = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getBio();
-        let myHero = Object(__WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */])(myBio);
-        heroElement.innerHTML = myHero;
+    view.addResumeElement('hero', __WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */]);
+    view.addResumeElement('projects', __WEBPACK_IMPORTED_MODULE_3__templates_projects__["a" /* addProjects */]);
+    view.addResumeElement('pro-skills', __WEBPACK_IMPORTED_MODULE_4__templates_proSkills__["a" /* addProSkills */]);
+    view.addResumeElement('studies', __WEBPACK_IMPORTED_MODULE_5__templates_studies__["a" /* addStudies */]);
+    view.addResumeElement('soft-skills', __WEBPACK_IMPORTED_MODULE_6__templates_softSkills__["a" /* addSoftSkills */]);
+    view.addResumeElement('pro-statement', __WEBPACK_IMPORTED_MODULE_7__templates_statement__["a" /* addStatement */]);
+    view.addResumeElement('contact', __WEBPACK_IMPORTED_MODULE_8__templates_contact__["a" /* addContacts */]);
+  },
+  fillTemplate: pageTemplate => {
 
-        // appending projects
-        let projectsDiv = document.querySelector('#projects');
-        let myProjects = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getProjects();
-        let myProjectList = Object(__WEBPACK_IMPORTED_MODULE_3__templates_projects__["a" /* addProjects */])(myProjects);
-        projectsDiv.innerHTML = myProjectList;
+    let myBio = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getBio();
+    let myProjects = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getProjects();
+    let mySkills = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getSkills();
+    let myStudies = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getStudies();
 
-        // appending pro-skills
-        let proSkillsDiv = document.querySelector('#pro-skills');
-        let mySkills = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getSkills();
-        let myProSkillList = Object(__WEBPACK_IMPORTED_MODULE_4__templates_proSkills__["a" /* addProSkills */])(mySkills);
-        proSkillsDiv.innerHTML = myProSkillList;
+    let templateMap = new Map();
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_2__templates_hero__["a" /* createHero */], myBio);
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_3__templates_projects__["a" /* addProjects */], myProjects);
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_4__templates_proSkills__["a" /* addProSkills */], mySkills);
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_5__templates_studies__["a" /* addStudies */], myStudies);
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_6__templates_softSkills__["a" /* addSoftSkills */], mySkills);
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_7__templates_statement__["a" /* addStatement */], myBio);
+    templateMap.set(__WEBPACK_IMPORTED_MODULE_8__templates_contact__["a" /* addContacts */], myBio);
 
-        // appending studies
-        let studiesDiv = document.querySelector('#studies');
-        let myStudies = __WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].getStudies();
-        let myStudyList = Object(__WEBPACK_IMPORTED_MODULE_5__templates_studies__["a" /* addStudies */])(myStudies);
-        studiesDiv.innerHTML = myStudyList;
-
-        // appending soft-skills
-        let softSkillsDiv = document.querySelector('#soft-skills');
-        let mySoftSkillList = Object(__WEBPACK_IMPORTED_MODULE_6__templates_softSkills__["a" /* addSoftSkills */])(mySkills);
-        softSkillsDiv.innerHTML = mySoftSkillList;
-
-        // appending pro-statement
-        let statementDiv = document.querySelector('#pro-statement');
-        let myStatement = Object(__WEBPACK_IMPORTED_MODULE_7__templates_statement__["a" /* addStatement */])(myBio);
-        statementDiv.innerHTML = myStatement;
-
-        // appending contact info
-        let contactsDiv = document.querySelector('#contact');
-        let myContactInfo = Object(__WEBPACK_IMPORTED_MODULE_8__templates_contact__["a" /* addContacts */])(myBio);
-        contactsDiv.innerHTML = myContactInfo;
-    }
+    let filledTemplate = pageTemplate(templateMap.get(pageTemplate));
+    return filledTemplate;
+  },
+  addResumeElement: (parentElement, pageTemplate) => {
+    let parentDiv = document.getElementById(parentElement);
+    let filledTemplate = view.fillTemplate(pageTemplate);
+    parentDiv.innerHTML = filledTemplate;
+  }
 };
 
 /***/ }),

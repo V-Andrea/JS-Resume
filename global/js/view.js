@@ -15,45 +15,39 @@ export let view = {
   render: () => {
     // TODO: add complete render functionality
 
-    fillTemplate(createHero);
-    // appending hero
-    let heroElement = document.querySelector('#hero');
+    view.addResumeElement('hero', createHero);
+    view.addResumeElement('projects', addProjects);
+    view.addResumeElement('pro-skills', addProSkills);
+    view.addResumeElement('studies', addStudies);
+    view.addResumeElement('soft-skills', addSoftSkills);
+    view.addResumeElement('pro-statement', addStatement);
+    view.addResumeElement('contact', addContacts);
+
+
+  },
+  fillTemplate : pageTemplate => {
+
     let myBio = control.getBio();
-    let myHero = createHero(myBio);
-    heroElement.innerHTML = myHero;
-
-    // appending projects
-    let projectsDiv = document.querySelector('#projects');
     let myProjects = control.getProjects();
-    let myProjectList = addProjects(myProjects);
-    projectsDiv.innerHTML = myProjectList;
-
-    // appending pro-skills
-    let proSkillsDiv = document.querySelector('#pro-skills');
     let mySkills = control.getSkills();
-    let myProSkillList = addProSkills(mySkills);
-    proSkillsDiv.innerHTML = myProSkillList;
-
-    // appending studies
-    let studiesDiv = document.querySelector('#studies');
     let myStudies = control.getStudies();
-    let myStudyList = addStudies(myStudies);
-    studiesDiv.innerHTML = myStudyList;
 
-    // appending soft-skills
-    let softSkillsDiv = document.querySelector('#soft-skills');
-    let mySoftSkillList = addSoftSkills(mySkills);
-    softSkillsDiv.innerHTML = mySoftSkillList;
+    let templateMap = new Map();
+    templateMap.set(createHero, myBio);
+    templateMap.set(addProjects, myProjects);
+    templateMap.set(addProSkills, mySkills);
+    templateMap.set(addStudies, myStudies);
+    templateMap.set(addSoftSkills, mySkills);
+    templateMap.set(addStatement, myBio);
+    templateMap.set(addContacts, myBio);
 
-    // appending pro-statement
-    let statementDiv = document.querySelector('#pro-statement');
-    let myStatement = addStatement(myBio);
-    statementDiv.innerHTML = myStatement;
+    let filledTemplate = pageTemplate(templateMap.get(pageTemplate));
+    return filledTemplate;
 
-    // appending contact info
-    let contactsDiv = document.querySelector('#contact');
-    let myContactInfo = addContacts(myBio);
-    contactsDiv.innerHTML = myContactInfo;
-
+  },
+  addResumeElement : (parentElement, pageTemplate) => {
+    let parentDiv = document.getElementById(parentElement);
+    let filledTemplate = view.fillTemplate(pageTemplate);
+    parentDiv.innerHTML = filledTemplate;
   }
 }
