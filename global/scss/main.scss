@@ -1,3 +1,39 @@
-p {
-  font-size: 14px;
+@import '../../node_modules/normalize.css/normalize.css';
+@import 'variables';
+@import 'commons';
+
+
+
+.hero {
+    padding: 30px;
+    background-image: url('/img/Unsplash.jpg');
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  .title {
+
+        @media screen and (min-width: 600px) {
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+        transform:  rotate(90deg);
+        transform-origin: right;
+
+    }
+  }
+
+  .greeting {
+    padding-top: 40vh;
+    margin-left: 2vw;;
+    font-weight: 700;
+    font-size: $font-size-lg;
+    line-height: 3rem;
+    width: 40vw;
+
+  }
+
+
 }
+
