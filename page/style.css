@@ -447,20 +447,74 @@ template {
 }
 html {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: normal;
-  font-size: 14px; }
+  font-size: 1rem;
+  color: #000; }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit; }
 
+ul {
+  list-style: none;
+  padding-left: 0; }
+
+a {
+  color: #502e2d;
+  text-decoration: none; }
+
+h1 {
+  font-size: 64px;
+  text-transform: uppercase; }
+
+h2,
+h3 {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #502e2d; }
+
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px; }
+
+.circle-bg {
+  fill: none;
+  stroke: #502e2d;
+  stroke-width: 2; }
+
+.circle {
+  fill: none;
+  stroke: #555655;
+  stroke-width: 2;
+  animation: progress 1s ease-out forwards; }
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100; } }
+
 .hero {
+  padding: 30px;
   background-image: url("/img/Unsplash.jpg");
-  height: 100%;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
+  @media only screen and (min-width: 600px) {
+    .hero .title {
+      position: fixed;
+      bottom: 5%;
+      right: 5%;
+      transform: rotate(90deg);
+      transform-origin: right; } }
+  .hero .greeting {
+    padding-top: 40vh;
+    margin-left: 2vw;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    width: 40vw; }
