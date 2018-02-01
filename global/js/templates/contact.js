@@ -1,6 +1,7 @@
 export const addContacts = data =>
     `
-    <ul>
+    <h2>Contact</h2>
+    <ul class="container">
       <li>
         <a class="class-link" target="_blank" href="mailto:${data.contacts.email}">E-mail</a>
       </li>

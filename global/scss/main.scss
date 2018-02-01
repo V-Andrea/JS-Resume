@@ -1,12 +1,14 @@
 @import '../../node_modules/normalize.css/normalize.css';
 @import 'variables';
 @import 'commons';
+@import 'card.scss';
 @import 'circular-chart.scss';
 
 
 
 .hero {
-    padding: 30px;
+    padding: 30px 5vw;
+    background-color: #e1c9be;
     background-image: url('/img/Unsplash.jpg');
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -27,14 +29,83 @@
 
   .greeting {
     padding-top: 40vh;
-    margin-left: 2vw;;
     font-weight: 700;
     font-size: $font-size-lg;
+    letter-spacing: 1.4px;
     line-height: 3rem;
     width: 40vw;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.40);
 
   }
 
-
 }
 
+.module {
+  margin-bottom: 120px;
+}
+
+
+
+.col-50 {
+  max-width: 50%;
+}
+
+.col-67 {
+  max-width: 60%;
+}
+
+.col-33 {
+  max-width: 40%;
+}
+
+#projects {
+  .card {
+    max-width: 80%;
+
+    &:not(:only-child) {
+      @media only screen and (min-width: 1200px) {
+        width: 40%;
+      }
+    }
+  }
+}
+
+#soft-skills {
+  padding: 80px 5vw;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  background-color: $gray-light;
+}
+
+.text-area {
+  padding: 32px;
+}
+
+
+#studies {
+  position: relative;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  background-color: #ffe7da;
+  h2 {
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .card {
+    width: 18rem;
+  }
+}
+
+
+
+footer {
+  padding-top: 30px;
+  padding-bottom: 120px;
+  font-size: $font-size-lg;
+  h2 {
+    text-align: center;
+    font-size: $font-size-xl;
+    margin-bottom: $font-size-xl *3;
+  }
+}

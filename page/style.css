@@ -475,6 +475,18 @@ h3 {
   margin-bottom: 1rem;
   color: #502e2d; }
 
+.wrapper {
+  width: 100%;
+  padding: 0 5vw 20px; }
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 0; }
+
 .circular-chart {
   display: block;
   margin: 10px auto;
@@ -497,7 +509,7 @@ h3 {
     stroke-dasharray: 0 100; } }
 
 .hero {
-  padding: 30px;
+  padding: 30px 5vw;
   background-image: url("/img/Unsplash.jpg");
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -513,8 +525,9 @@ h3 {
       transform-origin: right; } }
   .hero .greeting {
     padding-top: 40vh;
-    margin-left: 2vw;
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 3rem;
     width: 40vw; }
+  .hero img {
+    max-width: 150px; }
