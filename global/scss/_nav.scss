@@ -1,0 +1,70 @@
+.nav_inner {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: stretch;
+  position: fixed;
+  z-index: 1;
+    /* This trasform moves the drawer off canvas. */
+  -webkit-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+  transition: transform 0.3s ease;
+
+  &.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+
+  @media only screen and (min-width: 600px) {
+    width: 300px;
+    /* off canvas transform on big screens */
+    -webkit-transform: translate(-300px, 0);
+    transform: translate(-300px, 0);
+  }
+
+  .closebtn {
+      display: block;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      font-size: 42px;
+      cursor: pointer;
+      pointer-events: auto;
+  }
+
+  a {
+  text-align: center;
+  padding: 15px;
+  font-size: $font-size-md;
+  color: #fff;
+  }
+}
+
+
+
+.burger {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 1vw;
+  left: 1vw;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.line {
+  display: block;
+  margin: 8px 0;
+  width: 3vw;
+  height: 2px;
+  color: red;
+  background-color: black;
+}
+

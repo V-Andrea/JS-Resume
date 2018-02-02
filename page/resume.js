@@ -116,15 +116,15 @@ let projects = {
   'projects': [{
     'title': 'Resumé',
     'dates': '2017',
-    'description': 'this',
+    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fermentum sapien nec velit placerat cursus. Maecenas quis finibus velit. Curabitur viverra eros eu ultricies volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. In efficitur est sapien, sed malesuada lorem elementum vel. Aliquam pharetra, nibh eget tincidunt luctus, erat lorem gravida lectus, at faucibus elit tellus quis sapien. Etiam quis faucibus lorem. Sed imperdiet, ex sed efficitur ullamcorper, tortor nulla sodales diam, ut aliquet neque felis ultricies magna. Sed diam massa, scelerisque sed tortor eget, cursus pretium mi. Mauris et ultrices ipsum. Aliquam accumsan ligula eu urna euismod gravida. ',
     'github': 'https://github.com/V-Andrea',
-    'image': '/img/resume.jpg'
+    'image': '/img/unsplash.jpg'
   }, {
     'title': 'Edgy Fashion Prestashop Theme',
     'dates': '2016-2017',
-    'description': 'that',
+    'description': 'Nulla eget imperdiet nisi. Proin dolor enim, pharetra non quam sit amet, molestie mattis mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed justo at quam ultricies porttitor vel sed erat. Vivamus rutrum luctus scelerisque. Morbi eu mollis risus. Nulla mi nisi, pretium ac aliquam sit amet, malesuada et tortor. ',
     'github': 'https://github.com/V-Andrea',
-    'image': 'images/197x148.gif'
+    'image': '/img/ev-295467.jpg'
   }]
 };
 
@@ -194,6 +194,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // let's build the Resumé
 __WEBPACK_IMPORTED_MODULE_0__control__["a" /* control */].init();
+
+//event listeners and interactive scripts temporarily added here
+// TODO: move to view
+
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav-inner');
+
+burger.addEventListener('click', function (e) {
+  nav.classList.toggle('open');
+  e.stopPropagation();
+});
 
 /***/ }),
 /* 3 */
@@ -278,16 +289,23 @@ const createHero = data => `
 
 "use strict";
 const addProjects = data => `
-    <h2>Projects</h2>
+  <h2>Projects</h2>
+  <ul class="container">
     ${data.projects.map(project => `
-    <div class="project-entry">
-      <img src="${project.image}">
-      <h6>${project.title}</h6>
-      <a href="Github">${project.github}</a>
-      <div class="date-text">${project.dates}</div>
-      <p>${project.description}</p>
-    </div>
-    `).join('')}`;
+    <li class="card">
+      <img class="card-img" src="${project.image}">
+      <div class="card-body">
+        <h6 class="card-title">${project.title}</h6>
+        <div class="date-text">${project.dates}</div>
+        <p>${project.description}</p>
+      </div>
+      <div class="card-footer">
+        <a target="_blank" href="Github">${project.github}</a>
+      </div>
+    </li>
+    `).join('')}
+  </ul>
+  `;
 /* harmony export (immutable) */ __webpack_exports__["a"] = addProjects;
 
 
@@ -297,10 +315,16 @@ const addProjects = data => `
 
 "use strict";
 const addProSkills = data => `
-    <h2>Professional Skills</h2>
-    <ul class="pro-skills">
-      ${data.professional.map(skill => `<li>${skill}</li>`).join('')}
-    </ul>
+    <div class="col-33 text-area">
+      <h2>Professional Skills</h2>
+      <ul class="pro-skills">
+        ${data.professional.map(skill => `<li>${skill}</li>`).join('')}
+      </ul>
+    </div>
+    <div class="col-67">
+      <img src="/img/autri-taheri-435297.jpg">
+    </div>
+
     `;
 /* harmony export (immutable) */ __webpack_exports__["a"] = addProSkills;
 
@@ -311,16 +335,23 @@ const addProSkills = data => `
 
 "use strict";
 const addStudies = data => `
+  <img class="card-group-bg-img" src="/img/artem-sapegin-180146.jpg">
+  <div class="card-group">
     <h2>Studies</h2>
-    <ul class="courses">
-      ${data.onlineCourses.map(course => `<li>
-        <h6 class="class-title">${course.title}</h6>
-        <p>${course.school}</p>
-        <div class="date-text">${course.dates}</div>
-        <a class="class-link" href="${course.url}">${course.url}</a>
+    <ul class="container">
+      ${data.onlineCourses.map(course => `<li class="card">
+        <div class="card-body">
+          <h6 class="card-title">${course.title}</h6>
+          <p>${course.school}</p>
+          <div class="date-text">${course.dates}</div>
+        </div>
+        <div class="card-footer">
+          <a class="class-link" target="_blank" href="${course.url}">Course page</a>
+        </div>
       </li>`).join('')}
     </ul>
-    `;
+  </div>
+  `;
 /* harmony export (immutable) */ __webpack_exports__["a"] = addStudies;
 
 
@@ -331,7 +362,7 @@ const addStudies = data => `
 "use strict";
 const addSoftSkills = data => `
     <h2>Personal Skills</h2>
-    <ul>
+    <ul class="container">
       ${data.personal.map(skill => `<li>
         <svg class="circular-chart" viewbox="0 0 36 36">
             <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
@@ -350,8 +381,13 @@ const addSoftSkills = data => `
 
 "use strict";
 const addStatement = data => `
-    <h2 class="h2">Professional statement</h2>
-    <p>${data.statement}</p>
+    <div class="col-67">
+      <img src="/img/tim-mossholder-418237.jpg">
+    </div>
+    <div class="col-33 text-area">
+      <h2 class="h2">Professional statement</h2>
+      <p>${data.statement}</p>
+    </div>
     `;
 /* harmony export (immutable) */ __webpack_exports__["a"] = addStatement;
 
@@ -362,7 +398,8 @@ const addStatement = data => `
 
 "use strict";
 const addContacts = data => `
-    <ul>
+    <h2>Contact</h2>
+    <ul class="container">
       <li>
         <a class="class-link" target="_blank" href="mailto:${data.contacts.email}">E-mail</a>
       </li>

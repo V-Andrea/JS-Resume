@@ -450,6 +450,7 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: normal;
   font-size: 1rem;
+  line-height: 1.5rem;
   color: #000; }
 
 *,
@@ -457,23 +458,34 @@ html {
 *:after {
   box-sizing: inherit; }
 
+body {
+  background-color: #fff; }
+
+img {
+  max-width: 100%; }
+
 ul {
   list-style: none;
   padding-left: 0; }
 
 a {
-  color: #502e2d;
+  color: #000;
   text-decoration: none; }
 
 h1 {
   font-size: 64px;
+  line-height: 64px;
   text-transform: uppercase; }
 
 h2,
 h3 {
   text-transform: uppercase;
-  margin-bottom: 1rem;
-  color: #502e2d; }
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  color: #000; }
+
+h6 {
+  font-size: 1.2rem; }
 
 .wrapper {
   width: 100%;
@@ -481,21 +493,111 @@ h3 {
 
 .container {
   width: 100%;
+  webkit-display: flex;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-content: stretch;
   padding: 10px 0; }
+
+.date-text {
+  font-size: 0.75rem; }
+
+.nav_inner {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: stretch;
+  position: fixed;
+  z-index: 1;
+  /* This trasform moves the drawer off canvas. */
+  -webkit-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+  transition: transform 0.3s ease; }
+  @media only screen and (min-width: 600px) {
+    .nav_inner {
+      width: 300px;
+      /* off canvas transform on big screens */
+      -webkit-transform: translate(-300px, 0);
+      transform: translate(-300px, 0); } }
+  .nav_inner open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); }
+  .nav_inner a {
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2rem;
+    color: #fff; }
+
+.burger {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 1vw;
+  left: 1vw;
+  cursor: pointer;
+  pointer-events: auto; }
+
+.line {
+  display: block;
+  margin: 8px 0;
+  width: 3vw;
+  height: 2px;
+  color: red;
+  background-color: black; }
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  margin: 30px 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* On mouse-over, add a deeper shadow */ }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 20px; }
+
+.card-footer {
+  padding: 20px; }
+
+.card-img {
+  max-width: 100%; }
+
+.card-group-bg-img {
+  mix-blend-mode: multiply;
+  filter: grayscale(100%);
+  object-fit: cover;
+  vertical-align: middle; }
+
+.card-group {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
 
 .circular-chart {
   display: block;
   margin: 10px auto;
-  max-width: 80%;
-  max-height: 250px; }
+  width: 80%;
+  max-height: 250px;
+  flex: 1 1 auto; }
 
 .circle-bg {
   fill: none;
-  stroke: #502e2d;
+  stroke: #e1c9be;
   stroke-width: 2; }
 
 .circle {
@@ -510,6 +612,7 @@ h3 {
 
 .hero {
   padding: 30px 5vw;
+  background-color: #e1c9be;
   background-image: url("/img/Unsplash.jpg");
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -527,7 +630,54 @@ h3 {
     padding-top: 40vh;
     font-weight: 700;
     font-size: 1.5rem;
+    letter-spacing: 1.4px;
     line-height: 3rem;
-    width: 40vw; }
-  .hero img {
-    max-width: 150px; }
+    width: 40vw;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); }
+
+.module {
+  margin-bottom: 120px; }
+
+.col-50 {
+  max-width: 50%; }
+
+.col-67 {
+  max-width: 60%; }
+
+.col-33 {
+  max-width: 40%; }
+
+#projects .card {
+  max-width: 80%; }
+  @media only screen and (min-width: 1200px) {
+    #projects .card:not(:only-child) {
+      width: 40%; } }
+
+#soft-skills {
+  padding: 80px 5vw;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  background-color: #e6e5e4; }
+
+.text-area {
+  padding: 32px; }
+
+#studies {
+  position: relative;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  background-color: #ffe7da; }
+  #studies h2 {
+    text-align: center;
+    padding-top: 60px; }
+  #studies .card {
+    width: 18rem; }
+
+footer {
+  padding-top: 30px;
+  padding-bottom: 120px;
+  font-size: 1.5rem; }
+  footer h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 6rem; }
