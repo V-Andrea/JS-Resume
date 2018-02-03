@@ -6,6 +6,8 @@ control.init();
 
 //event listeners and interactive scripts temporarily added here
 // TODO: move to view
+
+// Opening and closing the NAVBAR
 // TODO: refactor the close into a function
 
 const burger = document.querySelector('.burger');
@@ -34,3 +36,5 @@ navLinks.forEach(navlink => {
     e.stopPropagation();
   });
 });
+
+

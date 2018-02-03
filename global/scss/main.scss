@@ -52,12 +52,23 @@
 }
 
 .col-67 {
-  max-width: 60%;
+  max-width: 100%;
 }
 
 .col-33 {
-  max-width: 40%;
+  max-width: 100%;
 }
+
+@media only screen and (min-width: 600px){
+  .col-67 {
+    max-width: 60%;
+  }
+
+  .col-33 {
+    max-width: 40%;
+  }
+}
+
 
 #projects {
   .card {
@@ -87,14 +98,16 @@
   position: relative;
   margin-left: -5vw;
   margin-right: -5vw;
-  background-color: #ffe7da;
   h2 {
-    text-align: center;
     padding-top: 60px;
   }
 
+
   .card {
     width: 18rem;
+  }
+  .card-group {
+    background-color: #ffe7da;
   }
 }
 

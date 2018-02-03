@@ -519,15 +519,26 @@ h6 {
   -webkit-transform: translate(-100%, 0);
   transform: translate(-100%, 0);
   transition: transform 0.3s ease; }
+  .nav_inner.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); }
   @media only screen and (min-width: 600px) {
     .nav_inner {
       width: 300px;
       /* off canvas transform on big screens */
       -webkit-transform: translate(-300px, 0);
       transform: translate(-300px, 0); } }
-  .nav_inner open {
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0); }
+  .nav_inner .closebtn {
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 42px;
+    cursor: pointer;
+    pointer-events: auto; }
   .nav_inner a {
     text-align: center;
     padding: 15px;
@@ -535,8 +546,8 @@ h6 {
     color: #fff; }
 
 .burger {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   position: fixed;
   top: 1vw;
   left: 1vw;
@@ -576,17 +587,18 @@ h6 {
   max-width: 100%; }
 
 .card-group-bg-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
   mix-blend-mode: multiply;
   filter: grayscale(100%);
   object-fit: cover;
   vertical-align: middle; }
 
 .card-group {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0; }
+  position: relative; }
 
 .circular-chart {
   display: block;
@@ -642,10 +654,16 @@ h6 {
   max-width: 50%; }
 
 .col-67 {
-  max-width: 60%; }
+  max-width: 100%; }
 
 .col-33 {
-  max-width: 40%; }
+  max-width: 100%; }
+
+@media only screen and (min-width: 600px) {
+  .col-67 {
+    max-width: 60%; }
+  .col-33 {
+    max-width: 40%; } }
 
 #projects .card {
   max-width: 80%; }
@@ -665,13 +683,16 @@ h6 {
 #studies {
   position: relative;
   margin-left: -5vw;
-  margin-right: -5vw;
-  background-color: #ffe7da; }
+  margin-right: -5vw; }
   #studies h2 {
     text-align: center;
     padding-top: 60px; }
+  #studies .class-title {
+    text-align: center; }
   #studies .card {
     width: 18rem; }
+  #studies .card-group {
+    background-color: #ffe7da; }
 
 footer {
   padding-top: 30px;

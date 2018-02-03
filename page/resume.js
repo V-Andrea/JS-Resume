@@ -197,13 +197,33 @@ __WEBPACK_IMPORTED_MODULE_0__control__["a" /* control */].init();
 
 //event listeners and interactive scripts temporarily added here
 // TODO: move to view
+// TODO: refactor the close into a function
 
 const burger = document.querySelector('.burger');
-const nav = document.querySelector('.nav-inner');
+const nav = document.querySelector('.nav_inner');
+const close = document.querySelector('.closebtn');
+const content = document.querySelector('.content');
+const navLinks = Array.from(document.querySelectorAll('.nav_inner > a'));
 
 burger.addEventListener('click', function (e) {
-  nav.classList.toggle('open');
+  nav.classList.add('open');
   e.stopPropagation();
+  content.addEventListener('click', function (e) {
+    nav.classList.remove('open');
+    e.stopPropagation();
+  });
+});
+
+close.addEventListener('click', function (e) {
+  nav.classList.remove('open');
+  e.stopPropagation();
+});
+
+navLinks.forEach(navlink => {
+  navlink.addEventListener('click', function (e) {
+    nav.classList.remove('open');
+    e.stopPropagation();
+  });
 });
 
 /***/ }),
@@ -335,8 +355,9 @@ const addProSkills = data => `
 
 "use strict";
 const addStudies = data => `
-  <img class="card-group-bg-img" src="/img/artem-sapegin-180146.jpg">
   <div class="card-group">
+
+  <img class="card-group-bg-img" src="/img/artem-sapegin-180146.jpg">
     <h2>Studies</h2>
     <ul class="container">
       ${data.onlineCourses.map(course => `<li class="card">
@@ -367,9 +388,9 @@ const addSoftSkills = data => `
         <svg class="circular-chart" viewbox="0 0 36 36">
             <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
             <path class="circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="${skill[1]}, 100" />
-        </svg>'
+        </svg>
         <h6 class="class-title">${skill[0]}</h6>
-      </li>`)}
+      </li>`).join('')}
     </ul>
     `;
 /* harmony export (immutable) */ __webpack_exports__["a"] = addSoftSkills;

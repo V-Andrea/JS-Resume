@@ -1,8 +1,9 @@
 export const addStudies = data =>
   `
-  <img class="card-group-bg-img" src="/img/artem-sapegin-180146.jpg">
   <div class="card-group">
-    <h2>Studies</h2>
+
+  <img class="card-group-bg-img" src="/img/artem-sapegin-180146.jpg">
+    <h2 class="text-center">Studies</h2>
     <ul class="container">
       ${data.onlineCourses.map(course => `<li class="card">
         <div class="card-body">

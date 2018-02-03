@@ -1,6 +1,6 @@
 export const addProjects = data =>
   `
-  <h2>Projects</h2>
+  <h2 class="text-center">Projects</h2>
   <ul class="container">
     ${data.projects.map(project => `
     <li class="card">
