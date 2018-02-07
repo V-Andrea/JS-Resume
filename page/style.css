@@ -447,11 +447,12 @@ template {
 }
 html {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: normal;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 200;
   font-size: 1rem;
   line-height: 1.5rem;
-  color: #000; }
+  color: #000;
+  letter-spacing: 1.8px; }
 
 *,
 *:before,
@@ -459,6 +460,7 @@ html {
   box-sizing: inherit; }
 
 body {
+  width: 100%;
   background-color: #fff; }
 
 img {
@@ -472,20 +474,36 @@ a {
   color: #000;
   text-decoration: none; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: Anton;
+  font-weight: normal;
+  color: #000; }
+
 h1 {
-  font-size: 64px;
-  line-height: 64px;
-  text-transform: uppercase; }
+  font-size: 80px;
+  line-height: 80px;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 6px; }
 
 h2,
 h3 {
   text-transform: uppercase;
+  font-size: 1.8rem;
+  margin-bottom: 3.6rem; }
+
+h4,
+h5 {
+  text-transform: uppercase;
   font-size: 1.5rem;
-  margin-bottom: 3rem;
-  color: #000; }
+  margin-bottom: 3rem; }
 
 h6 {
-  font-size: 1.2rem; }
+  font-size: 1.1rem;
+  margin-bottom: 2.2rem; }
+
+.text-center {
+  text-align: center; }
 
 .wrapper {
   width: 100%;
@@ -500,7 +518,8 @@ h6 {
   justify-content: space-evenly;
   align-items: stretch;
   align-content: stretch;
-  padding: 10px 0; }
+  padding: 10px 0;
+  overflow: hidden; }
 
 .date-text {
   font-size: 0.75rem; }
@@ -540,9 +559,13 @@ h6 {
     cursor: pointer;
     pointer-events: auto; }
   .nav_inner a {
+    font-family: Anton;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 2px;
     text-align: center;
     padding: 15px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #fff; }
 
 .burger {
@@ -552,7 +575,8 @@ h6 {
   top: 1vw;
   left: 1vw;
   cursor: pointer;
-  pointer-events: auto; }
+  pointer-events: auto;
+  z-index: 2; }
 
 .line {
   display: block;
@@ -609,7 +633,7 @@ h6 {
 
 .circle-bg {
   fill: none;
-  stroke: #e1c9be;
+  stroke: #ffe7da;
   stroke-width: 2; }
 
 .circle {
@@ -623,9 +647,10 @@ h6 {
     stroke-dasharray: 0 100; } }
 
 .hero {
+  position: relative;
   padding: 30px 5vw;
-  background-color: #e1c9be;
-  background-image: url("/img/Unsplash.jpg");
+  background-color: #ffe7da;
+  background-image: url("/img/unsplash.jpg");
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -640,9 +665,8 @@ h6 {
       transform-origin: right; } }
   .hero .greeting {
     padding-top: 40vh;
-    font-weight: 700;
+    font-weight: 300;
     font-size: 1.5rem;
-    letter-spacing: 1.4px;
     line-height: 3rem;
     width: 40vw;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); }
@@ -665,30 +689,40 @@ h6 {
   .col-33 {
     max-width: 40%; } }
 
-#projects .card {
-  max-width: 80%; }
-  @media only screen and (min-width: 1200px) {
-    #projects .card:not(:only-child) {
-      width: 40%; } }
+#projects {
+  background: linear-gradient(#fff, #f1f1f1);
+  margin-left: -5vw;
+  margin-right: -5vw;
+  padding-left: 5vw;
+  padding-right: 5vw; }
+  #projects .card {
+    max-width: 80%; }
+    @media only screen and (min-width: 1200px) {
+      #projects .card:not(:only-child) {
+        width: 40%; } }
 
 #soft-skills {
   padding: 80px 5vw;
   margin-left: -5vw;
   margin-right: -5vw;
-  background-color: #e6e5e4; }
+  background-color: #f1f1f1; }
+  #soft-skills h6 {
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-weight: 200; }
 
 .text-area {
   padding: 32px; }
+
+#pro-skills li {
+  line-height: 2rem; }
 
 #studies {
   position: relative;
   margin-left: -5vw;
   margin-right: -5vw; }
   #studies h2 {
-    text-align: center;
     padding-top: 60px; }
-  #studies .class-title {
-    text-align: center; }
   #studies .card {
     width: 18rem; }
   #studies .card-group {
@@ -700,5 +734,18 @@ footer {
   font-size: 1.5rem; }
   footer h2 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 6rem; }
+    font-size: 1.8rem;
+    margin-bottom: 5.4rem; }
+
+.slide-in {
+  opacity: 0;
+  transition: all 0.5s ease-out; }
+  .slide-in.active {
+    opacity: 1;
+    transform: translateX(0%) scale(1); }
+
+.slide-in_left {
+  transform: translateX(-30%) scale(0.95); }
+
+.slide-in_right {
+  transform: translateX(30%) scale(0.95); }

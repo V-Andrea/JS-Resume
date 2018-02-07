@@ -8,35 +8,32 @@
 
 
 .hero {
-    padding: 30px 5vw;
-    background-color: #e1c9be;
-    background-image: url('/img/Unsplash.jpg');
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  position: relative;
+  padding: 30px 5vw;
+  background-color: $brand-primary;
+  background-image: url('/img/unsplash.jpg');
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   .title {
-
-        @media only screen and (min-width: 600px) {
-        position: fixed;
-        bottom: 5%;
-        right: 5%;
-        transform:  rotate(90deg);
-        transform-origin: right;
-
+    @media only screen and (min-width: 600px) {
+      position: fixed;
+      bottom: 5%;
+      right: 5%;
+      transform:  rotate(90deg);
+      transform-origin: right;
     }
   }
 
   .greeting {
     padding-top: 40vh;
-    font-weight: 700;
+    font-weight: 300;
     font-size: $font-size-lg;
-    letter-spacing: 1.4px;
-    line-height: 3rem;
+    line-height: $font-size-lg * 2;
     width: 40vw;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.40);
-
   }
 
 }
@@ -47,19 +44,22 @@
 
 
 
-.col-50 {
-  max-width: 50%;
+.hidden-md {
+  @media only screen and (max-width: 850px) {
+    display: none;
+  }
 }
 
 .col-67 {
   max-width: 100%;
+  align-self: center;
 }
 
 .col-33 {
   max-width: 100%;
 }
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 850px){
   .col-67 {
     max-width: 60%;
   }
@@ -71,6 +71,11 @@
 
 
 #projects {
+  background: linear-gradient(#fff, $gray-light);
+  margin-left: -5vw;
+  margin-right: -5vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
   .card {
     max-width: 80%;
 
@@ -87,12 +92,23 @@
   margin-left: -5vw;
   margin-right: -5vw;
   background-color: $gray-light;
+
+  h6 {
+    font-family: Montserrat;
+    font-size: $base-font-size;
+    font-weight: 200;
+  }
 }
 
 .text-area {
   padding: 32px;
 }
 
+#pro-skills {
+  li {
+    line-height: 2rem;
+  }
+}
 
 #studies {
   position: relative;
@@ -107,7 +123,7 @@
     width: 18rem;
   }
   .card-group {
-    background-color: #ffe7da;
+    background-color: $brand-primary;
   }
 }
 
@@ -123,3 +139,22 @@ footer {
     margin-bottom: $font-size-xl *3;
   }
 }
+
+
+.slide-in {
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  &.active {
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+  }
+}
+
+.slide-in_left {
+  transform: translateX(-30%) scale(0.95);
+}
+
+.slide-in_right {
+  transform: translateX(30%) scale(0.95);
+}
+

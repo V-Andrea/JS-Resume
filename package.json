@@ -27,6 +27,16 @@
     "webpack-dev-server": "^2.11.0"
   },
   "dependencies": {
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "typeface-anton": "0.0.54",
+    "typeface-archivo-black": "0.0.54",
+    "typeface-cooper-hewitt": "0.0.44",
+    "typeface-gidole": "0.0.44",
+    "typeface-lato": "0.0.54",
+    "typeface-league-spartan": "0.0.44",
+    "typeface-montserrat": "0.0.54",
+    "typeface-pt-sans": "0.0.54",
+    "typeface-raleway": "0.0.54",
+    "typeface-source-sans-pro": "0.0.54"
   }
 }

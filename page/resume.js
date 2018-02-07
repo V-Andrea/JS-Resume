@@ -197,6 +197,8 @@ __WEBPACK_IMPORTED_MODULE_0__control__["a" /* control */].init();
 
 //event listeners and interactive scripts temporarily added here
 // TODO: move to view
+
+// Opening and closing the NAVBAR
 // TODO: refactor the close into a function
 
 const burger = document.querySelector('.burger');
@@ -225,6 +227,72 @@ navLinks.forEach(navlink => {
     e.stopPropagation();
   });
 });
+
+// Moving the title off screen by changing it's fixed position bottom vlaue
+
+const moveTitle = e => {
+  const title = document.querySelector('.title');
+  const greeting = document.querySelector('.greeting');
+  const bottomOfPage = window.scrollY + window.innerHeight;
+  const bottomOfGreeting = greeting.offsetTop + greeting.clientHeight;
+  const greetingBottomFromPageBottom = bottomOfPage - bottomOfGreeting;
+
+  const titleHeight = window.getComputedStyle(title).getPropertyValue('height');
+  const titleBottom = window.getComputedStyle(title).getPropertyValue('bottom');
+  const bottomOfTitleNumber = parseFloat(titleBottom);
+  const titleReachedGreetingEnd = bottomOfTitleNumber < greetingBottomFromPageBottom;
+  console.log(bottomOfTitleNumber, greetingBottomFromPageBottom, titleReachedGreetingEnd);
+  if (titleReachedGreetingEnd) {
+    title.style.bottom = greetingBottomFromPageBottom + 'px';
+  }
+};
+
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    window.addEventListener('scroll', moveTitle);
+  }
+};
+
+// slide-in effect for images
+
+// debounce function (as taken from Underscore.js):
+function debounce(func, wait = 20, immediate = true) {
+  var timeout;
+  return function () {
+    var context = this,
+        args = arguments;
+    var later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+const sliderImages = document.querySelectorAll('.slide-in');
+
+const checkSlide = e => {
+  sliderImages.forEach(sliderImage => {
+    const bottomOfPage = window.scrollY + window.innerHeight;
+    // image slides in when top half of it is supposed to be showing
+    // i.e. that much above of the bottom of page
+    const slideInAt = bottomOfPage - sliderImage.height / 2;
+    const imageBottom = sliderImage.offsetTop + sliderImage.height;
+    const isHalfShown = sliderImage.offsetTop < slideInAt;
+    const isNotScrolledBy = window.scrollY < imageBottom;
+
+    if (isHalfShown && isNotScrolledBy) {
+      sliderImage.classList.add('active');
+    } else {
+      sliderImage.classList.remove('active');
+    }
+  });
+};
+
+window.addEventListener('scroll', debounce(checkSlide));
 
 /***/ }),
 /* 3 */
@@ -309,7 +377,7 @@ const createHero = data => `
 
 "use strict";
 const addProjects = data => `
-  <h2>Projects</h2>
+  <h2 class="text-center">Projects</h2>
   <ul class="container">
     ${data.projects.map(project => `
     <li class="card">
@@ -342,7 +410,7 @@ const addProSkills = data => `
       </ul>
     </div>
     <div class="col-67">
-      <img src="/img/autri-taheri-435297.jpg">
+      <img class="slide-in slide-in_right" src="/img/autri-taheri-435297.jpg">
     </div>
 
     `;
@@ -358,7 +426,7 @@ const addStudies = data => `
   <div class="card-group">
 
   <img class="card-group-bg-img" src="/img/artem-sapegin-180146.jpg">
-    <h2>Studies</h2>
+    <h2 class="text-center">Studies</h2>
     <ul class="container">
       ${data.onlineCourses.map(course => `<li class="card">
         <div class="card-body">
@@ -382,14 +450,14 @@ const addStudies = data => `
 
 "use strict";
 const addSoftSkills = data => `
-    <h2>Personal Skills</h2>
+    <h2 class="text-center">Personal Skills</h2>
     <ul class="container">
       ${data.personal.map(skill => `<li>
         <svg class="circular-chart" viewbox="0 0 36 36">
             <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
             <path class="circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="${skill[1]}, 100" />
         </svg>
-        <h6 class="class-title">${skill[0]}</h6>
+        <h6 class="text-center">${skill[0]}</h6>
       </li>`).join('')}
     </ul>
     `;
@@ -403,7 +471,7 @@ const addSoftSkills = data => `
 "use strict";
 const addStatement = data => `
     <div class="col-67">
-      <img src="/img/tim-mossholder-418237.jpg">
+      <img class="slide-in slide-in_left" src="/img/tim-mossholder-418237.jpg">
     </div>
     <div class="col-33 text-area">
       <h2 class="h2">Professional statement</h2>
