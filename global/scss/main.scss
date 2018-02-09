@@ -18,12 +18,24 @@
   background-repeat: no-repeat;
   background-size: cover;
   .title {
-    @media only screen and (min-width: 600px) {
-      position: fixed;
-      bottom: 5%;
-      right: 5%;
-      transform:  rotate(90deg);
-      transform-origin: right;
+    &.fixed {
+        @media only screen and (min-width: 600px) {
+        position: fixed;
+        bottom: 30px;
+        right: $font-size-h1;
+        transform:  rotate(90deg);
+        transform-origin: right;
+      }
+    }
+
+    &.absolute {
+      @media only screen and (min-width: 600px) {
+        position: absolute;
+        bottom: 30px;
+        right: $font-size-h1;
+        transform:  rotate(90deg);
+        transform-origin: right;
+      }
     }
   }
 

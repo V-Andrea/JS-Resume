@@ -1,6 +1,6 @@
 export const createHero = data =>
     `
-    <div class="title">
+    <div class="title fixed">
       <h1 class="h1">${data.firstName} ${data.lastName}</h1>
     </div>
     <div class="greeting">

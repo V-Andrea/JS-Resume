@@ -252,12 +252,6 @@ const moveTitle = e => {
   }
 };
 
-document.onreadystatechange = () => {
-  if (document.readyState === 'complete') {
-    window.addEventListener('scroll', moveTitle);
-  }
-};
-
 // slide-in effect for images
 
 // debounce function (as taken from Underscore.js):
@@ -297,7 +291,11 @@ const checkSlide = e => {
   });
 };
 
-window.addEventListener('scroll', debounce(checkSlide));
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    window.addEventListener('scroll', debounce(moveTitle, checkSlide));
+  }
+};
 
 /***/ }),
 /* 3 */
