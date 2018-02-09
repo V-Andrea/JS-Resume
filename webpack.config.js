@@ -39,6 +39,9 @@ plugins.push(
                 }
               },
               {
+                loader: 'postcss-loader'
+              },
+              {
                 loader: 'resolve-url-loader'
               },
               {
@@ -54,7 +57,7 @@ plugins.push(
           test: /\.css$/,
           use: ExtractTextPlugin.extract({
             fallback: "style-loader",
-            use: ["css-loader", 'resolve-url-loader']
+            use: ["css-loader", 'resolve-url-loader', 'postcss-loader']
           })
         },
         {

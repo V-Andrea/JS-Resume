@@ -233,22 +233,27 @@ navLinks.forEach(navlink => {
   });
 });
 
-// Moving the title off screen by changing it's fixed position bottom vlaue
+// Moving the title off screen by changing it's fixed position to absolute
 
 const moveTitle = e => {
+  const bottomOfPage = window.scrollY + window.innerHeight;
   const title = document.querySelector('.title');
   const greeting = document.querySelector('.greeting');
-  const bottomOfPage = window.scrollY + window.innerHeight;
+
   const bottomOfGreeting = greeting.offsetTop + greeting.clientHeight;
   const greetingBottomFromPageBottom = bottomOfPage - bottomOfGreeting;
 
-  const titleHeight = window.getComputedStyle(title).getPropertyValue('height');
   const titleBottom = window.getComputedStyle(title).getPropertyValue('bottom');
   const bottomOfTitleNumber = parseFloat(titleBottom);
+
   const titleReachedGreetingEnd = bottomOfTitleNumber < greetingBottomFromPageBottom;
-  console.log(bottomOfTitleNumber, greetingBottomFromPageBottom, titleReachedGreetingEnd);
+
   if (titleReachedGreetingEnd) {
-    title.style.bottom = greetingBottomFromPageBottom + 'px';
+    title.classList.add('absolute');
+    title.classList.remove('fixed');
+  } else {
+    title.classList.add('fixed');
+    title.classList.remove('absolute');
   }
 };
 
@@ -293,7 +298,8 @@ const checkSlide = e => {
 
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
-    window.addEventListener('scroll', debounce(moveTitle, checkSlide));
+    window.addEventListener('scroll', moveTitle);
+    window.addEventListener('scroll', debounce(checkSlide));
   }
 };
 
@@ -391,7 +397,7 @@ let view = {
 
 "use strict";
 const createHero = data => `
-    <div class="title">
+    <div class="title fixed">
       <h1 class="h1">${data.firstName} ${data.lastName}</h1>
     </div>
     <div class="greeting">

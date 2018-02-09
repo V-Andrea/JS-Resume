@@ -23,6 +23,7 @@
     "image-webpack-loader": "^4.0.0",
     "jimp": "^0.2.28",
     "node-sass": "^4.7.2",
+    "postcss-loader": "^2.1.0",
     "resolve-url-loader": "^2.2.1",
     "responsive-loader": "^1.1.0",
     "sass-loader": "^6.0.6",
