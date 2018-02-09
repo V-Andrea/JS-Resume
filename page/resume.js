@@ -70,7 +70,7 @@
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return control; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view__ = __webpack_require__(8);
 
 
 
@@ -118,13 +118,13 @@ let projects = {
     'dates': '2017',
     'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fermentum sapien nec velit placerat cursus. Maecenas quis finibus velit. Curabitur viverra eros eu ultricies volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. In efficitur est sapien, sed malesuada lorem elementum vel. Aliquam pharetra, nibh eget tincidunt luctus, erat lorem gravida lectus, at faucibus elit tellus quis sapien. Etiam quis faucibus lorem. Sed imperdiet, ex sed efficitur ullamcorper, tortor nulla sodales diam, ut aliquet neque felis ultricies magna. Sed diam massa, scelerisque sed tortor eget, cursus pretium mi. Mauris et ultrices ipsum. Aliquam accumsan ligula eu urna euismod gravida. ',
     'github': 'https://github.com/V-Andrea',
-    'image': '/img/unsplash.jpg'
+    'image': __webpack_require__(6)
   }, {
     'title': 'Edgy Fashion Prestashop Theme',
     'dates': '2016-2017',
     'description': 'Nulla eget imperdiet nisi. Proin dolor enim, pharetra non quam sit amet, molestie mattis mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed justo at quam ultricies porttitor vel sed erat. Vivamus rutrum luctus scelerisque. Morbi eu mollis risus. Nulla mi nisi, pretium ac aliquam sit amet, malesuada et tortor. ',
     'github': 'https://github.com/V-Andrea',
-    'image': '/img/ev-295467.jpg'
+    'image': __webpack_require__(7)
   }]
 };
 
@@ -189,13 +189,18 @@ let education = {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__control__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_main_scss__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_main_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__scss_main_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__control__ = __webpack_require__(0);
+__webpack_require__(3);
+__webpack_require__(4);
+
 
 
 // let's build the Resumé
-__WEBPACK_IMPORTED_MODULE_0__control__["a" /* control */].init();
+__WEBPACK_IMPORTED_MODULE_1__control__["a" /* control */].init();
 
-//event listeners and interactive scripts temporarily added here
+// event listeners and interactive scripts temporarily added here
 // TODO: move to view
 
 // Opening and closing the NAVBAR
@@ -296,19 +301,49 @@ window.addEventListener('scroll', debounce(checkSlide));
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/unsplash.jpg";
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/ev-295467_1200.jpg";
+
+/***/ }),
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return view; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__control__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_hero__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__templates_projects__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__templates_proSkills__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__templates_studies__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__templates_softSkills__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__templates_statement__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__templates_contact__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_hero__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__templates_projects__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__templates_proSkills__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__templates_studies__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__templates_softSkills__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__templates_statement__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__templates_contact__ = __webpack_require__(27);
 
 
 
@@ -353,7 +388,7 @@ let view = {
 };
 
 /***/ }),
-/* 4 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -372,7 +407,7 @@ const createHero = data => `
 
 
 /***/ }),
-/* 5 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -398,7 +433,7 @@ const addProjects = data => `
 
 
 /***/ }),
-/* 6 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -409,8 +444,11 @@ const addProSkills = data => `
         ${data.professional.map(skill => `<li>${skill}</li>`).join('')}
       </ul>
     </div>
-    <div class="col-67">
-      <img class="slide-in slide-in_right" src="/img/autri-taheri-435297.jpg">
+    <div class="col-67 hidden-md">
+      <img
+        class="slide-in slide-in_right"
+        srcset="${__webpack_require__(12)} 1500vw, ${__webpack_require__(13)}, 900vw ${__webpack_require__(14)} 600vw"
+        src="${__webpack_require__(15)}" alt="Raw sugar on spoon">
     </div>
 
     `;
@@ -418,14 +456,41 @@ const addProSkills = data => `
 
 
 /***/ }),
-/* 7 */
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/autri-taheri_1800.jpg";
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/autri-taheri_1200.jpg";
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/autri-taheri_900.jpg";
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/autri-taheri_600.jpg";
+
+/***/ }),
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 const addStudies = data => `
   <div class="card-group">
-
-  <img class="card-group-bg-img" src="/img/artem-sapegin-180146.jpg">
+    <img
+      class="card-group-bg-img"
+      srcset="${__webpack_require__(17)} 1500vw, ${__webpack_require__(18)}, 900vw ${__webpack_require__(19)} 600vw"
+      src="${__webpack_require__(20)}"
+      alt="Laptop and coffeemug on a table">
     <h2 class="text-center">Studies</h2>
     <ul class="container">
       ${data.onlineCourses.map(course => `<li class="card">
@@ -445,7 +510,31 @@ const addStudies = data => `
 
 
 /***/ }),
-/* 8 */
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/artem-sapegin_1800.jpg";
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/artem-sapegin_1200.jpg";
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/artem-sapegin_900.jpg";
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/artem-sapegin_600.jpg";
+
+/***/ }),
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -465,13 +554,17 @@ const addSoftSkills = data => `
 
 
 /***/ }),
-/* 9 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 const addStatement = data => `
-    <div class="col-67">
-      <img class="slide-in slide-in_left" src="/img/tim-mossholder-418237.jpg">
+    <div class="col-67  hidden-md">
+      <img
+        class="slide-in slide-in_left"
+        srcset="${__webpack_require__(23)} 1500vw, ${__webpack_require__(24)}, 900vw ${__webpack_require__(25)} 600vw"
+        src="${__webpack_require__(26)}"
+        alt="Vivid green plant with magenta background">
     </div>
     <div class="col-33 text-area">
       <h2 class="h2">Professional statement</h2>
@@ -482,7 +575,31 @@ const addStatement = data => `
 
 
 /***/ }),
-/* 10 */
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/tim-mossholder_1800.jpg";
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/tim-mossholder_1200.jpg";
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/tim-mossholder_900.jpg";
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/tim-mossholder_600.jpg";
+
+/***/ }),
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

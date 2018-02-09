@@ -1,13 +1,15 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+
+
 let plugins = [];
 
 plugins.push(
   new ExtractTextPlugin('style.css')
 );
 
-  module.exports = [{
+  module.exports = {
     entry: './global/js/main.js',
     output: {
       filename: 'resume.js',
@@ -19,6 +21,73 @@ plugins.push(
           test: /\.js$/,
           exclude: /node_modules/,
           loaders: ['babel-loader']
+        },
+        {
+          test: /\.scss$/,
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              {
+                loader: 'css-loader',
+                options: {
+                  //root: '../img',
+                  // If you are having trouble with urls not resolving add this setting.
+                  // See https://github.com/webpack-contrib/css-loader#url
+                  //url: false,
+                  minimize: true,
+                  sourceMap: true
+                }
+              },
+              {
+                loader: 'resolve-url-loader'
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: true
+                }
+              }
+            ]
+          })
+        },
+        {
+          test: /\.css$/,
+          use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: ["css-loader", 'resolve-url-loader']
+          })
+        },
+        {
+          test: /\.(png|svg|jpg|gif)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'img/[name].[ext]'
+              }
+            },
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                bypassOnDebug: true,
+                mozjpeg: {
+                  progressive: true,
+                  quality: 75
+                  }
+              }
+            }
+          ]
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'fonts/[name].[ext]'
+              }
+            }
+          ]
         }
       ]
     },
@@ -29,46 +98,6 @@ plugins.push(
     },
     plugins: plugins,
     resolve: {
-      extensions: ['.js']
-    }
-  }, {
-    entry: './global/scss/main.scss',
-    output: {
-      filename: 'style.css',
-      path: path.resolve(__dirname, 'page')
-    },
-    module: {
-      rules: [
-        {
-          test: /\.scss$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
-          })
-        },
-        {
-          test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: "style-loader",
-            use: "css-loader"
-          })
-        },
-        {
-          test: /\.(png|svg|jpg|gif)$/,
-          use: [
-            'file-loader'
-          ]
-        },
-        {
-          test: /\.(woff|woff2|eot|ttf|otf)$/,
-          use: [
-            'file-loader'
-          ]
-        }
-      ]
-    },
-    plugins: plugins,
-    resolve: {
       extensions: ['.js', '.scss', '.css']
     }
-  }];
+  };

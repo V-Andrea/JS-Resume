@@ -1,8 +1,11 @@
 export const addStudies = data =>
   `
   <div class="card-group">
-
-  <img class="card-group-bg-img" src="/img/artem-sapegin-180146.jpg">
+    <img
+      class="card-group-bg-img"
+      srcset="${require('../../img/artem-sapegin_1800.jpg')} 1500vw, ${require('../../img/artem-sapegin_1200.jpg')}, 900vw ${require('../../img/artem-sapegin_900.jpg')} 600vw"
+      src="${require('../../img/artem-sapegin_600.jpg')}"
+      alt="Laptop and coffeemug on a table">
     <h2 class="text-center">Studies</h2>
     <ul class="container">
       ${data.onlineCourses.map(course => `<li class="card">

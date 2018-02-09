@@ -7,7 +7,7 @@ import {control} from './control';
 // let's build the Resumé
 control.init();
 
-//event listeners and interactive scripts temporarily added here
+// event listeners and interactive scripts temporarily added here
 // TODO: move to view
 
 // Opening and closing the NAVBAR
