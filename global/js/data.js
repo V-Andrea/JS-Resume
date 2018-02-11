@@ -24,7 +24,7 @@ let projects = {
     'dates' : '2017',
     'description' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fermentum sapien nec velit placerat cursus. Maecenas quis finibus velit. Curabitur viverra eros eu ultricies volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. In efficitur est sapien, sed malesuada lorem elementum vel. Aliquam pharetra, nibh eget tincidunt luctus, erat lorem gravida lectus, at faucibus elit tellus quis sapien. Etiam quis faucibus lorem. Sed imperdiet, ex sed efficitur ullamcorper, tortor nulla sodales diam, ut aliquet neque felis ultricies magna. Sed diam massa, scelerisque sed tortor eget, cursus pretium mi. Mauris et ultrices ipsum. Aliquam accumsan ligula eu urna euismod gravida. ',
     'github' : 'https://github.com/V-Andrea',
-    'image' : require('../img/unsplash.jpg')
+    'image' : require('../img/pineapple-supply-co_1200.jpg')
   },
   {
     'title' : 'Edgy Fashion Prestashop Theme',

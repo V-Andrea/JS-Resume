@@ -11,7 +11,17 @@
   position: relative;
   padding: 30px 5vw;
   background-color: $brand-primary;
-  background-image: url(img/unsplash.jpg);
+  background-image: url(img/pineapple-supply-co_600.jpg);
+  @media only screen and (min-width: 1500px) {
+    background-image: url(img/pineapple-supply-co_1800.jpg);
+  }
+  @media only screen and (min-width: 900px) {
+    background-image: url(img/pineapple-supply-co_1200.jpg);
+  }
+  @media only screen and (min-width: 600px) {
+    background-image: url(img/pineapple-supply-co_900.jpg);
+  }
+
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
