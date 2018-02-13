@@ -6,7 +6,7 @@ The object was to practice ES6 syntac and MVC pattern and modular build and show
 
 Original project's repository can be found here: https://github.com/udacity/frontend-nanodegree-resume
 
-# Installation:
+## Installation:
 
 Dependencies:
 
@@ -16,6 +16,6 @@ Then check out the project and run:
 
 npm install
 
-# Running
+## Running
 
 npm start
