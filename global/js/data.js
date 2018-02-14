@@ -21,16 +21,24 @@ let projects = {
   'projects' : [
   {
     'title' : 'Resumé',
-    'dates' : '2017',
-    'description' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fermentum sapien nec velit placerat cursus. Maecenas quis finibus velit. Curabitur viverra eros eu ultricies volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. In efficitur est sapien, sed malesuada lorem elementum vel. Aliquam pharetra, nibh eget tincidunt luctus, erat lorem gravida lectus, at faucibus elit tellus quis sapien. Etiam quis faucibus lorem. Sed imperdiet, ex sed efficitur ullamcorper, tortor nulla sodales diam, ut aliquet neque felis ultricies magna. Sed diam massa, scelerisque sed tortor eget, cursus pretium mi. Mauris et ultrices ipsum. Aliquam accumsan ligula eu urna euismod gravida. ',
-    'github' : 'https://github.com/V-Andrea',
+    'dates' : '2018',
+    'description' : `Static website with my Resumé based one of the projects in Udacity's
+                     Front-End Web Developer Nanodegree program and completely rewritten
+                     with a basic MVC pattern in Vanilla Javascript using ES6, Webpack, Babel,
+                     Autoprefixer, SCSS and of course HTML5. The object was to practice ES6
+                     syntax and MVC pattern and modular build and showcase some of my current
+                     knowledge in front-end development. Original project's repository can be found
+                     here: https://github.com/udacity/frontend-nanodegree-resume `,
+    'github' : 'https://github.com/V-Andrea/JS-Resume',
     'image' : require('../img/pineapple-supply-co_1200.jpg')
   },
   {
     'title' : 'Edgy Fashion Prestashop Theme',
-    'dates' : '2016-2017',
-    'description' : 'Nulla eget imperdiet nisi. Proin dolor enim, pharetra non quam sit amet, molestie mattis mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed justo at quam ultricies porttitor vel sed erat. Vivamus rutrum luctus scelerisque. Morbi eu mollis risus. Nulla mi nisi, pretium ac aliquam sit amet, malesuada et tortor. ',
-    'github' : 'https://github.com/V-Andrea',
+    'dates' : '2016-2018',
+    'description' : `Currently working on a theme for the open-source e-commerce software
+                    Prestashop with focus on UX and a clean and edgy design. Using Bootstrap4,
+                    SCSS, Bourbon, Smarty, Javascript.`,
+    'github' : 'n/a',
     'image' : require('../img/ev-295467_1200.jpg')
   }
   ]
@@ -79,10 +87,52 @@ let education = {
   }],
   'onlineCourses' : [
   {
-    'title' : 'Valami',
+    'title' : 'ES6 - JavaScript Improved',
+    'school' : 'Udacity',
+    'dates' : '2018',
+    'url' : 'https://eu.udacity.com/course/es6-javascript-improved--ud356'
+  },
+  {
+    'title' : 'Offline Web Applications',
+    'school' : 'Udacity',
+    'dates' : '2018',
+    'url' : 'https://eu.udacity.com/course/offline-web-applications--ud899'
+  },
+  {
+    'title' : 'JavaScript Design Patterns',
     'school' : 'Udacity',
     'dates' : '2017',
-    'url' : 'valami'
+    'url' : 'https://eu.udacity.com/course/javascript-design-patterns--ud989'
+  },
+  {
+    'title' : 'Intro to AJAX',
+    'school' : 'Udacity',
+    'dates' : '2017',
+    'url' : 'https://eu.udacity.com/course/intro-to-ajax--ud110'
+  },
+  {
+    'title' : 'Website Performance Optimization',
+    'school' : 'Udacity',
+    'dates' : '2017',
+    'url' : 'https://eu.udacity.com/course/website-performance-optimization--ud884'
+  },
+  {
+    'title' : 'Browser Rendering Optimization',
+    'school' : 'Udacity',
+    'dates' : '2017',
+    'url' : 'https://eu.udacity.com/course/browser-rendering-optimization--ud860'
+  },
+  {
+    'title' : 'HTML5 Canvas',
+    'school' : 'Udacity',
+    'dates' : '2017',
+    'url' : 'https://eu.udacity.com/course/html5-canvas--ud292'
+  },
+  {
+    'title' : 'Object-Oriented JavaScript',
+    'school' : 'Udacity',
+    'dates' : '2017',
+    'url' : 'https://eu.udacity.com/course/object-oriented-javascript--ud015'
   },
   {
     'title' : 'Intro to jQuery',
