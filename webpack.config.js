@@ -15,7 +15,7 @@ plugins.push(
     entry: './global/js/main.js',
     output: {
       filename: 'resume.js',
-      path: path.resolve(__dirname, 'page')
+      path: path.resolve(__dirname, 'public')
     },
     module: {
       rules: [
@@ -98,7 +98,7 @@ plugins.push(
     },
     devServer: {
       port: 3000, // most common port
-      contentBase: './page',
+      contentBase: './public',
       inline: true
     },
     plugins: plugins,
