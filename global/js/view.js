@@ -2,6 +2,7 @@ import { bio, projects, skills, education } from './data';
 import {control} from './control';
 import {createHero} from './templates/hero';
 import {addProjects} from './templates/projects';
+import {addMotto} from './templates/motto';
 import {addProSkills} from './templates/proSkills';
 import {addStudies} from './templates/studies';
 import {addSoftSkills} from './templates/softSkills';
@@ -26,6 +27,7 @@ export let view = {
     let templateMap = new Map();
     templateMap.set(createHero, {dataOrigin: myBio, parentElement: 'hero'});
     templateMap.set(addProjects, {dataOrigin: myProjects, parentElement: 'projects'});
+    templateMap.set(addMotto, {dataOrigin: myBio, parentElement: 'motto'});
     templateMap.set(addProSkills, {dataOrigin: mySkills, parentElement: 'pro-skills'});
     templateMap.set(addStudies, {dataOrigin: myStudies, parentElement: 'studies'});
     templateMap.set(addSoftSkills, {dataOrigin: mySkills, parentElement: 'soft-skills'});

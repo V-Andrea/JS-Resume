@@ -13,6 +13,10 @@ let bio = {
     'location' : 'Budapest'
   },
   'biopic' :'images/Andi.jpg' ,
+  'motto' : {
+    'text' : '"Whatever the mind can concieve and believe, it can achive"',
+    'author' : 'Napoleon Hill'
+  },
   'statement' : 'Experiencing a 5+ years in B2B business operations specific roles I’ve realized I really should be coding. Being on maternity leave I’ve been and am learning the essentials of front end web development. Would like to obtain a position that will enable me to create exciting things and expand my knowledge.',
   'welcomeMessage' : 'You are looking at my site that is a 2in1 Resumé and reference project built using Vanilla Javascript (ES6, SASS, Webpack, Babel, Autoprefixer). Looks awesome, right?'
 };
