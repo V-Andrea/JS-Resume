@@ -6,7 +6,7 @@ html {
   font-size: $base-font-size;
   line-height: $base-font-size * 1.5;
   color: $text-color;
-  letter-spacing: 1.8px;
+  letter-spacing: 1.2px;
 }
 
 *,
@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Anton;
   font-weight: normal;
   color: $highlight-color;
+  letter-spacing: 1.8px;
 }
 
 h1 {
