@@ -145,6 +145,11 @@
   }
   .card-group {
     background-color: $brand-primary;
+
+    ul {
+      max-width: 1200px;
+      margin: auto;
+    }
   }
 }
 
