@@ -51,7 +51,7 @@
 
   .greeting {
     padding-top: 40vh;
-    font-weight: 300;
+    color: $highlight-color;
     font-size: $font-size-lg;
     line-height: $font-size-lg * 2;
     width: 40vw;
@@ -118,7 +118,7 @@
   h6 {
     font-family: Montserrat;
     font-size: $base-font-size;
-    font-weight: 200;
+    color: $text-color;
   }
 }
 

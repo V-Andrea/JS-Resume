@@ -2,13 +2,13 @@
 $brand-primary: #ffe7da;
 $brand-secondary: #000;  // black
 $gray-light: #f1f1f1;
-$gray: #555655;
+$gray: #383838;
 
 $alert-color: #aa0e0e;
 
 // font colors
-$highlight-color: #000;
-$text-color: #000;
+$highlight-color: $brand-secondary;
+$text-color: $gray;
 
 // notification colors
 $error-color: #ef1313;
