@@ -20,7 +20,10 @@ body {
   background-color: #fff;
 }
 
-img {
+img,
+embed,
+object,
+video {
   max-width: 100%;
 }
 
