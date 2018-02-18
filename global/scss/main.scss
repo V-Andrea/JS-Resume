@@ -92,7 +92,6 @@
 
 
 #projects {
-  //background: linear-gradient(#fff, $gray-light;
   margin-left: -5vw;
   margin-right: -5vw;
   padding-left: 5vw;
@@ -105,6 +104,28 @@
         width: 40%;
       }
     }
+  }
+}
+
+#motto {
+  position: relative;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  background-color: $brand-primary;
+  background-image: url(img/ev-295467_1200.jpg);
+  h2 {
+    padding-top: 60px;
+  }
+
+  .bg-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: none;
+    vertical-align: middle;
   }
 }
 
