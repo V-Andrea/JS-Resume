@@ -60,7 +60,9 @@
 }
 
 .module {
-  margin-bottom: 120px;
+  margin-bottom: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 
@@ -113,9 +115,6 @@
   margin-right: -5vw;
   background-color: $brand-primary;
   background-image: url(img/ev-295467_1200.jpg);
-  h2 {
-    padding-top: 60px;
-  }
 
   .bg-img {
     position: absolute;
@@ -130,7 +129,7 @@
 }
 
 #soft-skills {
-  padding: 80px 5vw;
+  padding: 50px 5vw;
   margin-left: -5vw;
   margin-right: -5vw;
   background-color: $gray-light;
