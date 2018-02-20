@@ -11,12 +11,15 @@
   position: relative;
   padding: 30px 5vw;
   background-color: $brand-primary;
-  background-image: url(img/pineapple-supply-co_900.jpg);
+  background-image: url(img/ember-ivory-437636-600.jpg);
   @media only screen and (min-width: 1500px) {
-    background-image: url(img/pineapple-supply-co_1800.jpg);
+    background-image: url(img/ember-ivory-437636-1800.jpg);
   }
   @media only screen and (min-width: 900px) {
-    background-image: url(img/pineapple-supply-co_1200.jpg);
+    background-image: url(img/ember-ivory-437636-1200.jpg);
+  }
+  @media only screen and (min-width: 600px) {
+    background-image: url(img/ember-ivory-437636-900.jpg);
   }
 
   /* Create the parallax scrolling effect */
@@ -113,13 +116,18 @@
   position: relative;
   margin-left: -5vw;
   margin-right: -5vw;
-  background-color: $brand-primary;
-  background-image: url(img/ev-295467_1200.jpg);
+  background-color: #6a9061;
+  background-image: url(img/bart-zimny-345682_1200.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
+  h2 {
+    color: #fff;
+  }
+
   p {
+    color: #fff;
     max-width: 540px;
     margin: 30px auto;
   }
