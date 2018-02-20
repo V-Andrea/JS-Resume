@@ -7,18 +7,62 @@
 
 
 
+.module {
+  margin-bottom: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.card-group {
+  ul {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+.text-area {
+  align-self: center;
+  padding: 32px;
+}
+
+.hidden-md {
+  @media only screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.col-67 {
+  max-width: 100%;
+  align-self: center;
+}
+
+.col-33 {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 900px){
+  .col-67 {
+    max-width: 60%;
+  }
+
+  .col-33 {
+    max-width: 40%;
+  }
+}
+
+
 .hero {
   position: relative;
   padding: 30px 5vw;
-  background-color: $brand-primary;
-  background-image: url(img/ember-ivory-437636-600.jpg);
+  background-color: #fff;
+  background-image: none;
   @media only screen and (min-width: 1500px) {
     background-image: url(img/ember-ivory-437636-1800.jpg);
   }
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 900px) and (max-width: 1499px) {
     background-image: url(img/ember-ivory-437636-1200.jpg);
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 600px) and (max-width: 899px) {
     background-image: url(img/ember-ivory-437636-900.jpg);
   }
 
@@ -29,7 +73,7 @@
   background-size: cover;
   .title {
     &.fixed {
-        @media only screen and (min-width: 600px) {
+        @media only screen and (min-width: 900px) {
         position: fixed;
         bottom: 30px;
         right: $font-size-h1;
@@ -39,7 +83,7 @@
     }
 
     &.absolute {
-      @media only screen and (min-width: 600px) {
+      @media only screen and (min-width: 900px) {
         position: absolute;
         bottom: 30px;
         right: $font-size-h1;
@@ -61,38 +105,6 @@
 
 }
 
-.module {
-  margin-bottom: 80px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-
-
-.hidden-md {
-  @media only screen and (max-width: 850px) {
-    display: none;
-  }
-}
-
-.col-67 {
-  max-width: 100%;
-  align-self: center;
-}
-
-.col-33 {
-  max-width: 100%;
-}
-
-@media only screen and (min-width: 850px){
-  .col-67 {
-    max-width: 60%;
-  }
-
-  .col-33 {
-    max-width: 40%;
-  }
-}
 
 
 #projects {
@@ -110,6 +122,7 @@
     }
   }
 }
+
 
 #pro-statement {
   position: relative;
@@ -133,28 +146,13 @@
 
 }
 
-#soft-skills {
-  padding: 50px 5vw;
-  margin-left: -5vw;
-  margin-right: -5vw;
-  background-color: $gray-light;
-
-  h6 {
-    font-family: Montserrat;
-    font-size: $base-font-size;
-    color: $text-color;
-  }
-}
-
-.text-area {
-  padding: 32px;
-}
 
 #pro-skills {
   li {
     line-height: 2rem;
   }
 }
+
 
 #studies {
   position: relative;
@@ -171,23 +169,30 @@
   .card-group {
     background-color: $brand-primary;
 
-    ul {
-      max-width: 1200px;
-      margin: auto;
-    }
   }
 }
 
 #motto {
-  .text-area {
-    align-self: center;
-  }
-
   blockquote {
     font-size: 1.5rem;
     line-height: 1.5rem;
   }
 }
+
+
+#soft-skills {
+  padding: 50px 5vw;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  background-color: $gray-light;
+
+  h6 {
+    font-family: Montserrat;
+    font-size: $base-font-size;
+    color: $text-color;
+  }
+}
+
 
 footer {
   padding-top: 30px;
