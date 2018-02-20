@@ -56,6 +56,7 @@ h2,
 h3 {
   text-transform: uppercase;
   font-size: $font-size-xl;
+  line-height: $font-size-xl;
   margin-bottom: $font-size-xl *2;
 }
 
@@ -63,11 +64,13 @@ h4,
 h5 {
   text-transform: uppercase;
   font-size: $font-size-lg;
+  line-height: $font-size-lg;
   margin-bottom: $font-size-lg *2;
 }
 
 h6 {
   font-size: $font-size-md;
+  line-height: $font-size-md;
   margin-bottom: $font-size-md *2;
 }
 
