@@ -55,16 +55,19 @@
   position: relative;
   padding: 30px 5vw;
   background-color: #fff;
-  background-image: none;
-  @media only screen and (min-width: 1500px) {
-    background-image: url(img/ember-ivory-437636-1800.jpg);
+  background-image: url(img/gaelle-marcel-513561_600.jpg);
+
+  @media only screen and (min-width: 600px) and (max-width: 899px) {
+    background-image: url(img/gaelle-marcel-513561_900.jpg);
   }
   @media only screen and (min-width: 900px) and (max-width: 1499px) {
-    background-image: url(img/ember-ivory-437636-1200.jpg);
+    background-image: url(img/gaelle-marcel-513561_1200.jpg);
   }
-  @media only screen and (min-width: 600px) and (max-width: 899px) {
-    background-image: url(img/ember-ivory-437636-900.jpg);
+  @media only screen and (min-width: 1500px) {
+    background-image: url(img/gaelle-marcel-513561_1800.jpg);
   }
+
+
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -91,6 +94,10 @@
         transform-origin: right;
       }
     }
+  }
+
+  .title {
+    padding: 30px;
   }
 
   .greeting {
