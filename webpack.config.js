@@ -98,7 +98,6 @@ plugins.push(
     },
     devServer: {
       port: 3000, // most common port
-      contentBase: './public',
       inline: true
     },
     plugins: plugins,
