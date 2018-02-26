@@ -12,7 +12,7 @@ export const addProjects = data =>
           <p>${project.description}</p>
         </div>
         <div class="card-footer">
-          <a target="_blank" href="Github">${project.github}</a>
+          <a target="_blank" href="${project.github}">${project.github}</a>
         </div>
       </li>
       `).join('')}
