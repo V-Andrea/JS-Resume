@@ -44,18 +44,17 @@ navLinks.forEach(navlink => {
 // Moving the title off screen by changing it's fixed position to absolute
 
 const moveTitle = e => {
-  const bottomOfPage = window.scrollY + window.innerHeight;
+  const windowHeight = window.innerHeight;
+  const bottomOfPage = window.scrollY + windowHeight;
   const title = document.querySelector('.title');
   const greeting = document.querySelector('.greeting');
 
-
-  const bottomOfGreeting = greeting.offsetTop + greeting.clientHeight;
+  const bottomOfGreeting = greeting.offsetTop + greeting.clientHeight + 10;
   const greetingBottomFromPageBottom = bottomOfPage - bottomOfGreeting;
 
-  const titleBottom = window.getComputedStyle(title).getPropertyValue('bottom');
-  const bottomOfTitleNumber = parseFloat(titleBottom);
+  const titleBottom = (windowHeight - title.clientWidth) / 2;
 
-  const titleReachedGreetingEnd = bottomOfTitleNumber < greetingBottomFromPageBottom;
+  const titleReachedGreetingEnd = titleBottom < greetingBottomFromPageBottom;
 
 
   if (titleReachedGreetingEnd) {

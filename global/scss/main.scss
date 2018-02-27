@@ -75,38 +75,34 @@
   background-repeat: no-repeat;
   background-size: cover;
   .title {
-    &.fixed {
-        @media only screen and (min-width: 900px) {
+    padding: 50px 5vw;
+
+    @media only screen and (min-width: 900px) {
+      padding: 0;
+      right: calc(5vw + 40px);
+
+      &.fixed {
         position: fixed;
-        bottom: 30px;
-        right: $font-size-h1;
-        transform:  rotate(90deg);
-        transform-origin: right;
+        bottom: calc(50vh - 40px);
+        transform:  translate(50%, 0) rotate(90deg);
       }
-    }
 
-    &.absolute {
-      @media only screen and (min-width: 900px) {
+      &.absolute {
         position: absolute;
-        bottom: 30px;
-        right: $font-size-h1;
+        bottom: 8px;
         transform:  rotate(90deg);
         transform-origin: right;
       }
     }
-  }
-
-  .title {
-    padding: 30px;
   }
 
   .greeting {
-    padding-top: 40vh;
     color: $highlight-color;
     font-size: $font-size-lg;
     line-height: $font-size-lg * 2;
     @media only screen and (min-width: 600px) {
       width: 40vw;
+      padding-top: 40vh;
     }
   }
 
