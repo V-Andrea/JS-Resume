@@ -55,16 +55,20 @@
   position: relative;
   padding: 30px 5vw;
   background-color: #fff;
-  background-image: url(img/gaelle-marcel-513561_600.jpg);
+  background-image: url(img/gaelle-marcel-513561_900.jpg);
+  background-image: image-set(url(img/gaelle-marcel-513561_600.jpg) 1x, url(img/gaelle-marcel-513561_900.jpg) 2x, url(img/gaelle-marcel-513561_1200.jpg) 3x);
 
   @media only screen and (min-width: 600px) and (max-width: 899px) {
     background-image: url(img/gaelle-marcel-513561_900.jpg);
+    background-image: image-set(url(img/gaelle-marcel-513561_900.jpg) 1x, url(img/gaelle-marcel-513561_1800.jpg) 2x);
   }
   @media only screen and (min-width: 900px) and (max-width: 1499px) {
     background-image: url(img/gaelle-marcel-513561_1200.jpg);
+    background-image: image-set(url(img/gaelle-marcel-513561_1200.jpg) 1x, url(img/gaelle-marcel-513561_1800.jpg) 1.5x, url(img/gaelle-marcel-513561_3600.jpg) 3x);
   }
   @media only screen and (min-width: 1500px) {
     background-image: url(img/gaelle-marcel-513561_1800.jpg);
+    background-image: image-set(url(img/gaelle-marcel-513561_1800.jpg) 1x, url(img/gaelle-marcel-513561_3600.jpg) 2x);
   }
 
 
@@ -132,7 +136,21 @@
   margin-left: -5vw;
   margin-right: -5vw;
   background-color: #6a9061;
-  background-image: url(img/bart-zimny-345682_1200.jpg);
+  background-image: url(img/bart-zimny-345682_900.jpg);
+  background-image: image-set(url(img/bart-zimny-345682_600.jpg) 1x, url(img/bart-zimny-345682_900.jpg) 2x, url(img/bart-zimny-345682_1200.jpg) 3x);
+
+  @media only screen and (min-width: 600px) and (max-width: 899px) {
+    background-image: url(img/bart-zimny-345682_900.jpg);
+    background-image: image-set(url(img/bart-zimny-345682_900.jpg) 1x, url(img/bart-zimny-345682_1800.jpg) 2x);
+  }
+  @media only screen and (min-width: 900px) and (max-width: 1499px) {
+    background-image: url(img/bart-zimny-345682_1200.jpg);
+    background-image: image-set(url(img/bart-zimny-345682_1200.jpg) 1x, url(img/bart-zimny-345682_1800.jpg) 1.5x, url(img/bart-zimny-345682_2400.jpg) 2x);
+  }
+  @media only screen and (min-width: 1500px) {
+    background-image: url(img/bart-zimny-345682_1800.jpg);
+    background-image: image-set(url(img/bart-zimny-345682_1800.jpg) 1x, url(img/bart-zimny-345682_2400.jpg) 1.5x);
+  }
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
