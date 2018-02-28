@@ -15,7 +15,8 @@ plugins.push(
     entry: './global/js/main.js',
     output: {
       filename: 'resume.js',
-      path: path.resolve(__dirname, 'public')
+      path: path.resolve(__dirname, 'public'),
+      publicPath: 'public/'
     },
     module: {
       rules: [
@@ -52,14 +53,16 @@ plugins.push(
                   sourceMap: true
                 }
               }
-            ]
+            ],
+            publicPath: './'
           })
         },
         {
           test: /\.css$/,
           use: ExtractTextPlugin.extract({
             fallback: "style-loader",
-            use: ["css-loader", 'resolve-url-loader', 'postcss-loader']
+            use: ["css-loader", 'resolve-url-loader', 'postcss-loader'],
+            publicPath: './'
           })
         },
         {
