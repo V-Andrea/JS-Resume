@@ -2,7 +2,7 @@ export const addStudies = data =>
   `
   <div class="card-group">
     <img
-      class="card-group-bg-img"
+      class="card-group-bg-img hidden-md"
       srcset="${require('../../img/artem-sapegin_1800.jpg')} 1800w,
               ${require('../../img/artem-sapegin_1200.jpg')} 1200w,
               ${require('../../img/artem-sapegin_900.jpg')} 900w,

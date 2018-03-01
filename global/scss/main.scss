@@ -25,18 +25,24 @@
   padding: 32px;
 }
 
-.hidden-md {
-  @media only screen and (max-width: 900px) {
+.hidden-sm {
+  @media only screen and (max-width: 599px) {
     display: none;
   }
 }
 
-.col-67 {
+.hidden-md {
+  @media only screen and (max-width: 899px) {
+    display: none;
+  }
+}
+
+.col-60 {
   max-width: 100%;
   align-self: center;
 }
 
-.col-33 {
+.col-40 {
   max-width: 100%;
 }
 
