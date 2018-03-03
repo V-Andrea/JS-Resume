@@ -25,12 +25,6 @@
   padding: 32px;
 }
 
-.hidden-sm {
-  @media only screen and (max-width: 599px) {
-    display: none;
-  }
-}
-
 .hidden-md {
   @media only screen and (max-width: 899px) {
     display: none;
