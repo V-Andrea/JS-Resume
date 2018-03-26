@@ -12,10 +12,13 @@
   -webkit-transform: translate(-100%, 0);
   transform: translate(-100%, 0);
   transition: transform 0.3s ease;
+  /* Remove from taborder when nav is closed*/
+  visibility: hidden;
 
   &.open {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
+    visibility: visible;
   }
 
 
